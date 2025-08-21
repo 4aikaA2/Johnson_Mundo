@@ -48,7 +48,8 @@
         .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
         .hero-logo-large { max-width: 600px; height: auto; margin-bottom: 30px; filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2)); }
         .hero-subtitle { font-size: 1.4rem; margin-bottom: 20px; color: #666; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 40px; line-height: 1.2; }
+        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 40px; line-height: 1.2; display: flex; align-items: center; gap: 12px; }
+.hero-brand img { height: 42px; width: auto; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2)); }
         .cta-button { display: inline-block; background: #fff; color: #47C5AD; padding: 18px 45px; text-decoration: none; border-radius: 15px; font-size: 1.2rem; font-weight: bold; transition: all 0.3s ease; border: 3px solid #47C5AD; box-shadow: 0 4px 15px rgba(71,197,173,0.3); }
         .cta-button:hover { background: #47C5AD; color: #fff; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(71,197,173,0.4); }
         .categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
@@ -127,7 +128,7 @@
         <div class="curtain-left"></div>
         <div class="hero-content">
             <img src="./img/JohnsonLogo.png" alt="Johnson" class="hero-logo-large">
-            <p class="hero-subtitle">Качественное климатическое оборудование для вашего комфорта в онлайн магазине</p>
+            <p class="hero-subtitle">Качественное оборудование для вашего комфорта в онлайн магазине</p>
             <p class="hero-brand">Mundo Climatico</p>
             <a href="https://mundoclimatico.es/brand/johnson/" class="cta-button" target="_blank">Перейти в каталог</a>
         </div>
@@ -143,7 +144,7 @@
             
             <div class="category-card aerotermia">
                 <h3>Аэротермия</h3>
-                <p style="color: #000;">Тепловые насосы для отопления и горячей воды</p>
+                <p>Тепловые насосы для отопления и горячей воды</p>
                 <a href="https://mundoclimatico.es/product-category/aerotermia/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
             </div>
             
@@ -161,7 +162,7 @@
             
             <div class="category-card water-heaters">
                 <h3>Система охлаждения</h3>
-                <p>Холодильники и бытовая техника для дома</p>
+                <p>Напольные блоки, фанкойлы и другое оборудование охлаждения</p>
                 <a href="https://mundoclimatico.es/product-category/sistamas-de-refrigeracion/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
             </div>
         </section>
@@ -241,7 +242,7 @@
         // Переводы для всех языков
         const translations = {
             ru: {
-                hero_subtitle: "Качественное климатическое оборудование для вашего комфорта в онлайн магазине",
+                hero_subtitle: "Качественное оборудование для вашего комфорта в онлайн магазине",
                 hero_brand: "Mundo Climatico",
                 cta_button: "Перейти в каталог",
                 air_conditioners: "Кондиционеры",
