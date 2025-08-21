@@ -56,9 +56,14 @@
         .category-card.air-conditioners { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/AirJ.png') center center/cover; }
         .category-card.aerotermia { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/Aerotermia 2.png') center center/cover; }
         .category-card.appliances { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/televisores.png') center center/cover; }
+        .category-card.dehumidifiers { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/portatiles-aire.png') center center/cover; }
+        .category-card.water-heaters { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/suelotecho.png') center center/cover; }
         .category-card:hover { transform: translateY(-5px); }
-        .category-card h3 { font-size: 2.5rem; margin-bottom: 15px; color: #2B2C2C; font-family: 'Lato', 'Source Sans Pro', 'Roboto', 'Segoe UI', sans-serif; font-weight: 300; }
-        .category-card p { color: #666; margin-bottom: 20px; }
+        .category-card::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 0; transition: opacity 0.3s ease; }
+        .category-card:hover::before { opacity: 0.45; }
+        .category-card h3, .category-card p, .category-card .category-button { position: relative; z-index: 1; }
+        .category-card h3 { font-size: 2.5rem; margin-bottom: 15px; color: #fff; font-family: 'Lato', 'Source Sans Pro', 'Roboto', 'Segoe UI', sans-serif; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
+        .category-card p { color: #f2f2f2; margin-bottom: 20px; text-shadow: 0 1px 6px rgba(0,0,0,0.3); }
         .category-button { background: #000; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 15px; font-weight: bold; transition: background 0.3s ease; }
         .category-button:hover { background: #333; }
         
@@ -133,25 +138,31 @@
             <div class="category-card air-conditioners">
                 <h3>Кондиционеры</h3>
                 <p>Бытовые и коммерческие решения для кондиционирования</p>
-                <a href="catalog.html#split-systems" class="category-button">Смотреть модели</a>
+                <a href="https://mundoclimatico.es/product-category/aire-acondicionados/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
             </div>
             
             <div class="category-card aerotermia">
                 <h3>Аэротермия</h3>
                 <p style="color: #000;">Тепловые насосы для отопления и горячей воды</p>
-                <a href="catalog.html#aerotermia" class="category-button">Смотреть модели</a>
+                <a href="https://mundoclimatico.es/product-category/aerotermia/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
             </div>
             
             <div class="category-card appliances">
                 <h3>Бытовая техника</h3>
                 <p>Телевизоры и бытовая электроника для дома</p>
-                <a href="catalog.html#appliances" class="category-button">Смотреть модели</a>
+                <a href="https://mundoclimatico.es/product-category/electrodomesticos/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
             </div>
             
-            <div class="category-card">
-                <h3>Коммерческие решения</h3>
-                <p>Специализированные системы для бизнеса</p>
-                <a href="catalog.html#commercial-solutions" class="category-button">Подбор по объекту</a>
+            <div class="category-card dehumidifiers">
+                <h3>Осушители воздуха</h3>
+                <p>Портативные и стационарные осушители для любых помещений</p>
+                <a href="https://mundoclimatico.es/product-category/deshumidificador/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
+            </div>
+            
+            <div class="category-card water-heaters">
+                <h3>Система охлаждения</h3>
+                <p>Холодильники и бытовая техника для дома</p>
+                <a href="https://mundoclimatico.es/product-category/sistamas-de-refrigeracion/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
             </div>
         </section>
 
@@ -227,6 +238,154 @@
     </div>
 
     <script>
+        // Переводы для всех языков
+        const translations = {
+            ru: {
+                hero_subtitle: "Качественное климатическое оборудование для вашего комфорта в онлайн магазине",
+                hero_brand: "Mundo Climatico",
+                cta_button: "Перейти в каталог",
+                air_conditioners: "Кондиционеры",
+                air_conditioners_desc: "Бытовые и коммерческие решения для кондиционирования",
+                aerotermia: "Аэротермия",
+                aerotermia_desc: "Тепловые насосы для отопления и горячей воды",
+                appliances: "Бытовая техника",
+                appliances_desc: "Телевизоры и бытовая электроника для дома",
+                water_heaters: "Система охлаждения",
+                water_heaters_desc: "Холодильники и бытовая техника для дома",
+                dehumidifiers: "Осушители воздуха",
+                dehumidifiers_desc: "Портативные и стационарные осушители для любых помещений",
+                view_models: "Смотреть модели",
+                object_selection: "Подбор по объекту",
+                key_models: "Ключевые модели",
+                key_models_desc: "Быстрые ссылки на карточки товаров",
+                key_1: "Ключевая 1",
+                key_2: "Ключевая 2",
+                key_3: "Ключевая 3",
+                key_4: "Ключевая 4",
+                key_5: "Ключевая 5",
+                key_6: "Ключевая 6",
+                hit_sales: "Хит продаж",
+                quiet: "Тихая",
+                economical: "Экономичная",
+                for_office: "Для офиса",
+                premium: "Премиум",
+                budget: "Бюджет",
+                about_company: "О компании",
+                about_desc: "Узнайте больше о Johnson",
+                more_details: "Подробнее",
+                faq: "FAQ",
+                faq_desc: "Доставка, монтаж, гарантия",
+                free_delivery: "Бесплатная доставка по городу",
+                professional_installation: "Профессиональный монтаж",
+                warranty_2years: "Гарантия 2 года",
+                support_24_7: "Техническая поддержка 24/7",
+                contacts_form: "Контакты + форма",
+                feedback: "Обратная связь",
+                your_name: "Ваше имя",
+                email: "Email",
+                phone: "Телефон",
+                message: "Сообщение",
+                send: "Отправить",
+                message_sent: "Сообщение отправлено!"
+            },
+            es: {
+                hero_subtitle: "Equipamiento climático de calidad para su comodidad en la tienda online",
+                hero_brand: "Mundo Climatico",
+                cta_button: "Ir al catálogo",
+                air_conditioners: "Aire Acondicionado",
+                air_conditioners_desc: "Soluciones domésticas y comerciales para climatización",
+                aerotermia: "Aerotermia",
+                aerotermia_desc: "Bombas de calor para calefacción y agua caliente",
+                appliances: "Electrodomésticos",
+                appliances_desc: "Televisores y electrónica doméstica",
+                water_heaters: "Sistemas de refrigeración",
+                water_heaters_desc: "Frigoríficos y electrodomésticos para el hogar",
+                dehumidifiers: "Deshumidificadores",
+                dehumidifiers_desc: "Deshumidificadores portátiles y estacionarios para cualquier habitación",
+                view_models: "Ver modelos",
+                object_selection: "Selección por objeto",
+                key_models: "Modelos Clave",
+                key_models_desc: "Enlaces rápidos a fichas de productos",
+                key_1: "Clave 1",
+                key_2: "Clave 2",
+                key_3: "Clave 3",
+                key_4: "Clave 4",
+                key_5: "Clave 5",
+                key_6: "Clave 6",
+                hit_sales: "Éxito de ventas",
+                quiet: "Silencioso",
+                economical: "Económico",
+                for_office: "Para oficina",
+                premium: "Premium",
+                budget: "Presupuesto",
+                about_company: "Sobre la empresa",
+                about_desc: "Conozca más sobre Johnson",
+                more_details: "Más detalles",
+                faq: "FAQ",
+                faq_desc: "Entrega, instalación, garantía",
+                free_delivery: "Entrega gratuita en la ciudad",
+                professional_installation: "Instalación profesional",
+                warranty_2years: "Garantía de 2 años",
+                support_24_7: "Soporte técnico 24/7",
+                contacts_form: "Contactos + formulario",
+                feedback: "Comentarios",
+                your_name: "Su nombre",
+                email: "Email",
+                phone: "Teléfono",
+                message: "Mensaje",
+                send: "Enviar",
+                message_sent: "¡Mensaje enviado!"
+            },
+            en: {
+                hero_subtitle: "Quality climate equipment for your comfort in the online store",
+                hero_brand: "Mundo Climatico",
+                cta_button: "Go to catalog",
+                air_conditioners: "Air Conditioning",
+                air_conditioners_desc: "Domestic and commercial solutions for air conditioning",
+                aerotermia: "Aerothermia",
+                aerotermia_desc: "Heat pumps for heating and hot water",
+                appliances: "Home Appliances",
+                appliances_desc: "TVs and home electronics",
+                water_heaters: "Cooling Systems",
+                water_heaters_desc: "Refrigerators and home appliances for the house",
+                dehumidifiers: "Air Dehumidifiers",
+                dehumidifiers_desc: "Portable and stationary dehumidifiers for any room",
+                view_models: "View models",
+                object_selection: "Selection by object",
+                key_models: "Key Models",
+                key_models_desc: "Quick links to product cards",
+                key_1: "Key 1",
+                key_2: "Key 2",
+                key_3: "Key 3",
+                key_4: "Key 4",
+                key_5: "Key 5",
+                key_6: "Key 6",
+                hit_sales: "Best seller",
+                quiet: "Quiet",
+                economical: "Economical",
+                for_office: "For office",
+                premium: "Premium",
+                budget: "Budget",
+                about_company: "About company",
+                about_desc: "Learn more about Johnson",
+                more_details: "More details",
+                faq: "FAQ",
+                faq_desc: "Delivery, installation, warranty",
+                free_delivery: "Free delivery in the city",
+                professional_installation: "Professional installation",
+                warranty_2years: "2 year warranty",
+                support_24_7: "24/7 technical support",
+                contacts_form: "Contacts + form",
+                feedback: "Feedback",
+                your_name: "Your name",
+                email: "Email",
+                phone: "Phone",
+                message: "Message",
+                send: "Send",
+                message_sent: "Message sent!"
+            }
+        };
+
         // Функция переключения языков
         function changeLanguage(lang) {
             // Убираем активный класс у всех кнопок
@@ -237,14 +396,101 @@
             // Добавляем активный класс к выбранной кнопке
             event.target.classList.add('active');
             
-            // Здесь можно добавить логику смены языка
+            // Применяем переводы
+            const t = translations[lang];
+            
+            // Основные элементы
+            document.querySelector('.hero-subtitle').textContent = t.hero_subtitle;
+            document.querySelector('.hero-brand').textContent = t.hero_brand;
+            document.querySelector('.cta-button').textContent = t.cta_button;
+            
+            // Плашки категорий
+            document.querySelector('.air-conditioners h3').textContent = t.air_conditioners;
+            document.querySelector('.air-conditioners p').textContent = t.air_conditioners_desc;
+            document.querySelector('.air-conditioners .category-button').textContent = t.view_models;
+            
+            document.querySelector('.aerotermia h3').textContent = t.aerotermia;
+            document.querySelector('.aerotermia p').textContent = t.aerotermia_desc;
+            document.querySelector('.aerotermia .category-button').textContent = t.view_models;
+            
+            document.querySelector('.appliances h3').textContent = t.appliances;
+            document.querySelector('.appliances p').textContent = t.appliances_desc;
+            document.querySelector('.appliances .category-button').textContent = t.view_models;
+            
+            document.querySelector('.dehumidifiers h3').textContent = t.dehumidifiers;
+            document.querySelector('.dehumidifiers p').textContent = t.dehumidifiers_desc;
+            document.querySelector('.dehumidifiers .category-button').textContent = t.view_models;
+            
+            document.querySelector('.water-heaters h3').textContent = t.water_heaters;
+            document.querySelector('.water-heaters p').textContent = t.water_heaters_desc;
+            document.querySelector('.water-heaters .category-button').textContent = t.view_models;
+            
+            // Ключевые модели
+            document.querySelector('.section-title h2').textContent = t.key_models;
+            document.querySelector('.section-title p').textContent = t.key_models_desc;
+            
+            // Модели
+            const modelCards = document.querySelectorAll('.model-card h4');
+            modelCards[0].textContent = t.key_1;
+            modelCards[1].textContent = t.key_2;
+            modelCards[2].textContent = t.key_3;
+            modelCards[3].textContent = t.key_4;
+            modelCards[4].textContent = t.key_5;
+            modelCards[5].textContent = t.key_6;
+            
+            const modelTags = document.querySelectorAll('.model-card .tag');
+            modelTags[0].textContent = t.hit_sales;
+            modelTags[1].textContent = t.quiet;
+            modelTags[2].textContent = t.economical;
+            modelTags[3].textContent = t.for_office;
+            modelTags[4].textContent = t.premium;
+            modelTags[5].textContent = t.budget;
+            
+            // Футер
+            document.querySelector('.footer-sections .category-card:nth-child(1) h3').textContent = t.about_company;
+            document.querySelector('.footer-sections .category-card:nth-child(1) p').textContent = t.about_desc;
+            document.querySelector('.footer-sections .category-card:nth-child(1) .category-button').textContent = t.more_details;
+            
+            document.querySelector('.footer-sections .category-card:nth-child(2) h3').textContent = t.faq;
+            document.querySelector('.footer-sections .category-card:nth-child(2) p').textContent = t.faq_desc;
+            
+            const faqItems = document.querySelectorAll('.footer-sections .category-card:nth-child(2) li');
+            faqItems[0].textContent = t.free_delivery;
+            faqItems[1].textContent = t.professional_installation;
+            faqItems[2].textContent = t.warranty_2years;
+            faqItems[3].textContent = t.support_24_7;
+            
+            document.querySelector('.footer-sections .category-card:nth-child(3) h3').textContent = t.contacts_form;
+            document.querySelector('.footer-sections .category-card:nth-child(3) p').textContent = t.feedback;
+            
+            // Форма
+            const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+            formInputs[0].placeholder = t.your_name;
+            formInputs[1].placeholder = t.email;
+            formInputs[2].placeholder = t.phone;
+            formInputs[3].placeholder = t.message;
+            document.querySelector('.contact-form button').textContent = t.send;
+            
+            // Сохраняем выбранный язык
+            localStorage.setItem('selectedLanguage', lang);
+            
             console.log('Язык изменен на:', lang);
         }
+        
+        // Загружаем сохраненный язык при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+            if (savedLang !== 'ru') {
+                changeLanguage(savedLang);
+            }
+        });
         
         // Обработчик формы
         document.querySelector(".contact-form").addEventListener("submit", function(e) {
             e.preventDefault();
-            alert("Сообщение отправлено!");
+            const currentLang = document.querySelector('.language-switcher button.active').getAttribute('onclick').match(/'([^']+)'/)[1];
+            const t = translations[currentLang];
+            alert(t.message_sent);
         });
     </script>
 </body>
