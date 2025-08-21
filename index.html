@@ -7,12 +7,12 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .language-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
         .language-switcher button { background: #fff; color: #333; border: 2px solid #e0e0e0; padding: 8px 16px; margin: 0 4px; border-radius: 20px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: bold; }
         .language-switcher button:hover { border-color: #000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .language-switcher button.active { border-color: #000; background: #f8f8f8; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .hero { position: relative; background: linear-gradient(135deg, rgba(248,249,250,0.8) 0%, rgba(233,236,239,0.8) 100%); padding: 80px 40px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0 0 30px 30px; }
+        .hero { position: relative; background: linear-gradient(135deg, rgba(248,249,250,0.8) 0%, rgba(233,236,239,0.8) 100%); padding: 80px 40px; text-align: center; margin-bottom: 80px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0 0 30px 30px; }
         
         /* Анимированная легкая тюль справа */
         .curtain {
@@ -56,7 +56,7 @@
 .hero-brand img { height: 42px; width: auto; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2)); }
         .cta-button { display: inline-block; background: #fff; color: #47C5AD; padding: 18px 45px; text-decoration: none; border-radius: 15px; font-size: 1.2rem; font-weight: bold; transition: all 0.3s ease; border: 3px solid #47C5AD; box-shadow: 0 4px 15px rgba(71,197,173,0.3); }
         .cta-button:hover { background: #47C5AD; color: #fff; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(71,197,173,0.4); }
-        .categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
+        .categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 80px; }
         .category-card { background: #fff; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; position: relative; overflow: hidden; }
         .category-card.air-conditioners { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/AirJ.png') center center/cover; }
         .category-card.aerotermia { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/Aerotermia 2.png') center center/cover; }
@@ -77,16 +77,31 @@
         @keyframes tulleWaveRight { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-20px)} }
         @-webkit-keyframes tulleWaveLeft { 0%,100%{-webkit-transform:translateX(0)} 50%{-webkit-transform:translateX(20px)} }
         @keyframes tulleWaveLeft { 0%,100%{transform:translateX(0)} 50%{transform:translateX(20px)} }
-        .key-models { margin-bottom: 40px; }
-        .section-title { text-align: center; margin-bottom: 30px; }
+        .key-models { margin-bottom: 80px; }
+        .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 2rem; color: #000; margin-bottom: 10px; }
         .section-title p { color: #666; font-size: 1.1rem; }
-        .models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .model-card { background: #fff; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 3px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
         .model-card:hover { transform: translateY(-3px); }
         .model-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: #000; }
         .model-card .tag { background: #f0f0f0; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; display: inline-block; }
-        .footer-sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .model-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        .model-card .model-button { background: #47C5AD; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 10px; font-weight: bold; transition: background 0.3s ease; display: inline-block; margin-top: 10px; }
+        .model-card .model-button:hover { background: #3ba892; }
+        
+        /* Стили для слайдера фотографий */
+        .photo-slider { position: relative; width: 100%; height: 200px; border-radius: 8px; overflow: hidden; margin-bottom: 15px; }
+        .photo-slider img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .photo-slider img.active { opacity: 1; }
+        .slider-nav { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+        .slider-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.6); cursor: pointer; transition: background 0.3s ease; }
+        .slider-dot.active { background: #fff; }
+        .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: #fff; border: none; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: background 0.3s ease; z-index: 10; }
+        .slider-arrow:hover { background: rgba(0, 0, 0, 0.8); }
+        .slider-arrow.prev { left: 10px; }
+        .slider-arrow.next { right: 10px; }
+        .footer-sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
         .footer-card { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
         .footer-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #000; }
         .footer-card p { color: #666; margin-bottom: 20px; }
@@ -173,14 +188,30 @@
 
         <section class="key-models">
             <div class="section-title">
-                <h2>Ключевые модели</h2>
+                <h2>Популярные модели</h2>
                 <p>Быстрые ссылки на карточки товаров</p>
             </div>
             
             <div class="models-grid">
                 <div class="model-card">
-                    <h4>Ключевая 1</h4>
-                    <span class="tag">Хит продаж</span>
+                    <div class="photo-slider">
+                        <img src="./img/acabado-negro_1.jpg" alt="Everest 52 - Вид 1" class="active">
+                        <img src="./img/acabado-negro_2.jpg" alt="Everest 52 - Вид 2">
+                        <img src="./img/acabado-negro_3.jpg" alt="Everest 52 - Вид 3">
+                        <img src="./img/acabado-negro_4.jpg" alt="Everest 52 - Вид 4">
+                        
+                        <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+                        
+                        <div class="slider-nav">
+                            <div class="slider-dot active" onclick="goToSlide(0)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2)"></div>
+                            <div class="slider-dot" onclick="goToSlide(3)"></div>
+                        </div>
+                    </div>
+                    <h4>Everest 52</h4>
+                    <a href="https://mundoclimatico.es/product/aire-acondicionado-everest-52-everest52k/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
                 <div class="model-card">
@@ -261,9 +292,9 @@
                 dehumidifiers_desc: "Портативные и стационарные осушители для любых помещений",
                 view_models: "Смотреть модели",
                 object_selection: "Подбор по объекту",
-                key_models: "Ключевые модели",
+                key_models: "Популярные модели",
                 key_models_desc: "Быстрые ссылки на карточки товаров",
-                key_1: "Ключевая 1",
+                key_1: "Everest 52",
                 key_2: "Ключевая 2",
                 key_3: "Ключевая 3",
                 key_4: "Ключевая 4",
@@ -275,9 +306,9 @@
                 for_office: "Для офиса",
                 premium: "Премиум",
                 budget: "Бюджет",
+                more_details: "Подробнее",
                 about_company: "О компании",
                 about_desc: "Узнайте больше о Johnson",
-                more_details: "Подробнее",
                 faq: "FAQ",
                 faq_desc: "Доставка, монтаж, гарантия",
                 free_delivery: "Бесплатная доставка по городу",
@@ -309,9 +340,9 @@
                 dehumidifiers_desc: "Deshumidificadores portátiles y estacionarios para cualquier habitación",
                 view_models: "Ver modelos",
                 object_selection: "Selección por objeto",
-                key_models: "Modelos Clave",
+                key_models: "Modelos Populares",
                 key_models_desc: "Enlaces rápidos a fichas de productos",
-                key_1: "Clave 1",
+                key_1: "Everest 52",
                 key_2: "Clave 2",
                 key_3: "Clave 3",
                 key_4: "Clave 4",
@@ -323,9 +354,9 @@
                 for_office: "Para oficina",
                 premium: "Premium",
                 budget: "Presupuesto",
+                more_details: "Más detalles",
                 about_company: "Sobre la empresa",
                 about_desc: "Conozca más sobre Johnson",
-                more_details: "Más detalles",
                 faq: "FAQ",
                 faq_desc: "Entrega, instalación, garantía",
                 free_delivery: "Entrega gratuita en la ciudad",
@@ -357,9 +388,9 @@
                 dehumidifiers_desc: "Portable and stationary dehumidifiers for any room",
                 view_models: "View models",
                 object_selection: "Selection by object",
-                key_models: "Key Models",
+                key_models: "Popular Models",
                 key_models_desc: "Quick links to product cards",
-                key_1: "Key 1",
+                key_1: "Everest 52",
                 key_2: "Key 2",
                 key_3: "Key 3",
                 key_4: "Key 4",
@@ -371,9 +402,9 @@
                 for_office: "For office",
                 premium: "Premium",
                 budget: "Budget",
+                more_details: "More details",
                 about_company: "About company",
                 about_desc: "Learn more about Johnson",
-                more_details: "More details",
                 faq: "FAQ",
                 faq_desc: "Delivery, installation, warranty",
                 free_delivery: "Free delivery in the city",
@@ -443,13 +474,21 @@
             modelCards[4].textContent = t.key_5;
             modelCards[5].textContent = t.key_6;
             
+            // Обновляем теги для всех карточек кроме первой (Everest 52)
             const modelTags = document.querySelectorAll('.model-card .tag');
-            modelTags[0].textContent = t.hit_sales;
-            modelTags[1].textContent = t.quiet;
-            modelTags[2].textContent = t.economical;
-            modelTags[3].textContent = t.for_office;
-            modelTags[4].textContent = t.premium;
-            modelTags[5].textContent = t.budget;
+            if (modelTags.length >= 5) {
+                modelTags[0].textContent = t.quiet;
+                modelTags[1].textContent = t.economical;
+                modelTags[2].textContent = t.for_office;
+                modelTags[3].textContent = t.premium;
+                modelTags[4].textContent = t.budget;
+            }
+            
+            // Обновляем текст кнопки для Everest 52
+            const modelButtons = document.querySelectorAll('.model-card .model-button');
+            if (modelButtons[0]) {
+                modelButtons[0].textContent = t.more_details;
+            }
             
             // Футер
             document.querySelector('.footer-sections .category-card:nth-child(1) h3').textContent = t.about_company;
@@ -496,6 +535,51 @@
             const currentLang = document.querySelector('.language-switcher button.active').getAttribute('onclick').match(/'([^']+)'/)[1];
             const t = translations[currentLang];
             alert(t.message_sent);
+        });
+        
+        // Слайдер фотографий
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.photo-slider img');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            if (slides.length === 0) return;
+            
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = (n + slides.length) % slides.length;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        function changeSlide(n) {
+            showSlide(currentSlide + n);
+            resetAutoSlide();
+        }
+        
+        function goToSlide(n) {
+            showSlide(n);
+            resetAutoSlide();
+        }
+        
+        function resetAutoSlide() {
+            clearInterval(slideInterval);
+            startAutoSlide();
+        }
+        
+        function startAutoSlide() {
+            slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000); // Смена каждые 5 секунд
+        }
+        
+        // Запускаем автосмену при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoSlide();
         });
     </script>
 </body>
