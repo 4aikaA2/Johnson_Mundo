@@ -226,8 +226,46 @@
             .hero { min-height: 400px; padding: 60px 20px; } 
             .scroll-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
             .footer-card { min-height: auto; }
+            
+            /* Мобильная версия language-switcher */
+            .language-switcher { 
+                flex-direction: row; 
+                flex-wrap: nowrap; 
+                width: auto; 
+                max-width: none; 
+            }
+            .language-switcher button { 
+                flex-shrink: 0; 
+                margin: 0 2px; 
+                padding: 6px 12px; 
+                font-size: 0.9rem; 
+            }
         }
-        @media (max-width: 480px) { .models-grid { grid-template-columns: 1fr; } .container { padding: 15px; } .hero { min-height: 350px; padding: 40px 15px; } .hero-logo-large { max-width: 300px; } .hero-brand { font-size: 2rem; } .hero-subtitle { font-size: 1.1rem; } .scroll-to-top { bottom: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; } }
+        @media (max-width: 480px) { 
+            .models-grid { grid-template-columns: 1fr; } 
+            .container { padding: 15px; } 
+            .hero { min-height: 350px; padding: 40px 15px; } 
+            .hero-logo-large { max-width: 300px; } 
+            .hero-brand { font-size: 2rem; } 
+            .hero-subtitle { font-size: 1.1rem; } 
+            .scroll-to-top { bottom: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; }
+            
+            /* Очень маленькие экраны - еще более компактный language-switcher */
+            .language-switcher { 
+                padding: 8px; 
+                top: 15px; 
+                right: 15px; 
+            }
+            .language-switcher button { 
+                padding: 5px 10px; 
+                font-size: 0.8rem; 
+                margin: 0 1px; 
+            }
+            .language-switcher button svg { 
+                width: 16px; 
+                height: 12px; 
+            }
+        }
     </style>
 </head>
 <body>
@@ -353,7 +391,7 @@
                         </div>
                     </div>
                     <h4>Кондиционер Everest 52</h4>
-                    <a href="https://mundoclimatico.es/product/aire-acondicionado-everest-52-everest52k/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/aire-acondicionado-everest-52-everest52k/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
 
@@ -374,7 +412,7 @@
                         </div>
                     </div>
                     <h4>Кондиционер JFM140Y2K</h4>
-                    <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-jfmv2-140-trifasica-jfm140y2k/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-jfmv2-140-trifasica-jfm140y2k/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
                 <div class="model-card">
@@ -382,7 +420,7 @@
                         <img src="./img/acumulador-aerotermico-acs.jpg" alt="Аэротермический аккумулятор ГВС" class="active">
                     </div>
                     <h4>Аэротермический аккумулятор ГВС</h4>
-                    <a href="https://mundoclimatico.es/product/acumuladores-aerotermicos-para-acs-serie-manantial/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/acumuladores-aerotermicos-para-acs-serie-manantial/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
                 <div class="model-card">
@@ -401,7 +439,7 @@
                         </div>
                     </div>
                     <h4>Моноблок серии Aurum R32</h4>
-                    <a href="https://mundoclimatico.es/product/aerotermia-serie-aurum-r32-3/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/aerotermia-serie-aurum-r32-3/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
                 <div class="model-card">
@@ -418,7 +456,7 @@
                         </div>
                     </div>
                     <h4>Холодильник JRD145EX</h4>
-                    <a href="https://mundoclimatico.es/product/frigorifico-dos-puertas-143x55-cm-e-inox-jrd145ex/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/frigorifico-dos-puertas-143x55-cm-e-inox-jrd145ex/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
 
@@ -428,7 +466,7 @@
                         <img src="./img/lavadora-5-kg-d.jpg" alt="Стиральная машина EGA80" class="active">
                     </div>
                     <h4>Стиральная машина EGA80</h4>
-                    <a href="https://mundoclimatico.es/product/lavadora-8-kg-e-blanco-ega80/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/lavadora-8-kg-e-blanco-ega80/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
                 <div class="model-card">
@@ -447,7 +485,7 @@
                         </div>
                     </div>
                     <h4>Android TV J32SWS</h4>
-                    <a href="https://mundoclimatico.es/product/android-tv-32-hd-ready-blanca-j32sws/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/android-tv-32-hd-ready-blanca-j32sws/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
                 <div class="model-card">
@@ -455,7 +493,7 @@
                         <img src="./img/deshumidificador.jpg" alt="Осушитель воздуха JHD30" class="active">
                     </div>
                     <h4>Осушитель воздуха JHD30</h4>
-                    <a href="https://mundoclimatico.es/product/deshumidificador-30-litros-jhd30/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/deshumidificador-30-litros-jhd30/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
                 
                 <div class="model-card">
@@ -463,7 +501,7 @@
                         <img src="./img/fan-coil-suelo-techo.jpg" alt="Кондиционер Mistral" class="active">
                     </div>
                     <h4>Кондиционер серии Mistral</h4>
-                    <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-serie-mistral-3/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                    <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-serie-mistral-3/" class="model-button" target="_blank" rel="noopener noreferrer">Más detalles</a>
                 </div>
             </div>
         </section>
