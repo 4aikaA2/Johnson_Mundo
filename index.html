@@ -49,10 +49,21 @@
 
         
 
-        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; background: rgba(255, 255, 255, 0.4); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
         .hero-logo-large { max-width: 600px; height: auto; margin-bottom: 30px; filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2)); }
-        .hero-subtitle { font-size: 1.4rem; margin-bottom: 20px; color: #666; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 40px; line-height: 1.2; }
+        
+        /* Бегущие титры с баннером */
+        .running-banner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
+        .running-banner-content { display: flex; animation: runBanner 30s linear infinite; align-items: center; padding: 80px 0; }
+        .running-banner-content img { height: 340px; width: auto; object-fit: contain; }
+        
+        @keyframes runBanner {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .hero-subtitle { font-size: 1.4rem; margin-bottom: 20px; color: #333; text-shadow: none; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.2); margin-bottom: 40px; line-height: 1.2; transition: opacity 0.8s ease-in-out; }
 .hero-brand img { height: 42px; width: auto; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2)); }
         .cta-button { display: inline-block; background: #fff; color: #47C5AD; padding: 18px 45px; text-decoration: none; border-radius: 15px; font-size: 1.2rem; font-weight: bold; transition: all 0.3s ease; border: 3px solid #47C5AD; box-shadow: 0 4px 15px rgba(71,197,173,0.3); }
         .cta-button:hover { background: #47C5AD; color: #fff; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(71,197,173,0.4); }
@@ -63,6 +74,7 @@
         .category-card.appliances { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/televisores.png') center center/cover; }
         .category-card.dehumidifiers { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/portatiles-aire.png') center center/cover; }
         .category-card.water-heaters { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/suelotecho.png') center center/cover; }
+        .category-card.installation { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/montaz.png') center center/cover; }
         .category-card:hover { transform: translateY(-5px); }
         .category-card::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 0; transition: opacity 0.3s ease; }
         .category-card:hover::before { opacity: 0.45; }
@@ -102,14 +114,120 @@
         .slider-arrow.prev { left: 10px; }
         .slider-arrow.next { right: 10px; }
         .footer-sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
-        .footer-card { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .footer-card { 
+            background: #fff; 
+            border-radius: 15px; 
+            padding: 30px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 400px;
+        }
         .footer-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #000; }
         .footer-card p { color: #666; margin-bottom: 20px; }
+        
+        /* Равномерное распределение контента в плашках */
+        .footer-card > div:last-child {
+            margin-top: auto;
+        }
+        
+        .footer-card .category-button {
+            margin-top: auto;
+            align-self: flex-start;
+        }
         .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; }
         .contact-form button { background: #000; color: #fff; padding: 12px 25px; border: none; border-radius: 15px; font-size: 1rem; cursor: pointer; transition: background 0.3s ease; }
         .contact-form button:hover { background: #333; }
-        @media (max-width: 768px) { .categories { grid-template-columns: 1fr; } .models-grid { grid-template-columns: repeat(2, 1fr); } .footer-sections { grid-template-columns: 1fr; } .hero-logo-large { max-width: 400px; } .hero-brand { font-size: 2.5rem; } .hero { min-height: 400px; padding: 60px 20px; } }
-        @media (max-width: 480px) { .models-grid { grid-template-columns: 1fr; } .container { padding: 15px; } .hero { min-height: 350px; padding: 40px 15px; } .hero-logo-large { max-width: 300px; } .hero-brand { font-size: 2rem; } .hero-subtitle { font-size: 1.1rem; } }
+        /* Кнопка "наверх" */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #47C5AD;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(71,197,173,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .scroll-to-top:hover {
+            background: #3ba892;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(71,197,173,0.4);
+        }
+        
+        .scroll-to-top.show {
+            display: flex;
+        }
+        
+        /* Стили для контактов */
+        .footer-card a[href^="tel:"]:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        #email-contact:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        #copy-notification {
+            animation: fadeInOut 2s ease-in-out;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        /* Стили для карты */
+        .footer-card iframe {
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-card iframe:hover {
+            transform: scale(1.02);
+        }
+        
+        .footer-card a[href*="maps.google.com"]:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+        
+        /* Стили для интерактивной карты */
+        .footer-card div[onclick="openGoogleMaps()"] {
+            transition: all 0.3s ease;
+        }
+        
+        .footer-card div[onclick="openGoogleMaps()"]:hover {
+            background: #e9ecef !important;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 768px) { 
+            .categories { grid-template-columns: 1fr; } 
+            .models-grid { grid-template-columns: repeat(2, 1fr); } 
+            .footer-sections { grid-template-columns: 1fr; } 
+            .hero-logo-large { max-width: 400px; } 
+            .hero-brand { font-size: 2.5rem; } 
+            .hero { min-height: 400px; padding: 60px 20px; } 
+            .scroll-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            .footer-card { min-height: auto; }
+        }
+        @media (max-width: 480px) { .models-grid { grid-template-columns: 1fr; } .container { padding: 15px; } .hero { min-height: 350px; padding: 40px 15px; } .hero-logo-large { max-width: 300px; } .hero-brand { font-size: 2rem; } .hero-subtitle { font-size: 1.1rem; } .scroll-to-top { bottom: 15px; right: 15px; width: 40px; height: 40px; font-size: 18px; } }
     </style>
 </head>
 <body>
@@ -145,6 +263,24 @@
     <section class="hero">
         <div class="curtain"></div>
         <div class="curtain-left"></div>
+        
+        <!-- Бегущие титры с баннером -->
+        <div class="running-banner">
+            <div class="running-banner-content">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+                <img src="./img/bannerjohnson2.png" alt="Johnson Banner">
+            </div>
+        </div>
+        
         <div class="hero-content">
             <img src="./img/JohnsonLogo.png" alt="Johnson" class="hero-logo-large">
             <p class="hero-subtitle">Качественное оборудование для вашего комфорта в онлайн магазине</p>
@@ -180,9 +316,15 @@
             </div>
             
             <div class="category-card water-heaters">
-                <h3>Система охлаждения</h3>
+                <h3>Системы охлаждения</h3>
                 <p>Напольные блоки, фанкойлы и другое оборудование охлаждения</p>
                 <a href="https://mundoclimatico.es/product-category/sistamas-de-refrigeracion/?wpf_filter_brand=johnson&wpf_count=16" class="category-button" target="_blank" rel="noopener noreferrer">Смотреть модели</a>
+            </div>
+            
+            <div class="category-card installation">
+                <h3>Монтаж оборудования</h3>
+                <p>Профессиональная установка и настройка климатического оборудования</p>
+                <a href="https://mundoclimatico.es/servicio-de-mantenimiento/" class="category-button" target="_blank" rel="noopener noreferrer">Узнать больше</a>
             </div>
         </section>
 
@@ -210,14 +352,11 @@
                             <div class="slider-dot" onclick="goToSlide(3, 0)"></div>
                         </div>
                     </div>
-                    <h4>Everest 52</h4>
+                    <h4>Кондиционер Everest 52</h4>
                     <a href="https://mundoclimatico.es/product/aire-acondicionado-everest-52-everest52k/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
-                <div class="model-card">
-                    <h4>Ключевая 2</h4>
-                    <span class="tag">Тихая</span>
-                </div>
+
                 
                 <div class="model-card">
                     <div class="photo-slider">
@@ -225,37 +364,108 @@
                         <img src="./img/suelo-techo_2.jpg" alt="JFM140Y2K - Вид 2">
                         <img src="./img/suelo-techo_3.jpg" alt="JFM140Y2K - Вид 3">
                         
-                        <button class="slider-arrow prev" onclick="changeSlide(-1, 1)">‹</button>
-                        <button class="slider-arrow next" onclick="changeSlide(1, 1)">›</button>
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 3)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 3)">›</button>
                         
                         <div class="slider-nav">
-                            <div class="slider-dot active" onclick="goToSlide(0, 1)"></div>
-                            <div class="slider-dot" onclick="goToSlide(1, 1)"></div>
-                            <div class="slider-dot" onclick="goToSlide(2, 1)"></div>
+                            <div class="slider-dot active" onclick="goToSlide(0, 3)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 3)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 3)"></div>
                         </div>
                     </div>
-                    <h4>JFM140Y2K</h4>
+                    <h4>Кондиционер JFM140Y2K</h4>
                     <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-jfmv2-140-trifasica-jfm140y2k/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
                 <div class="model-card">
-                    <h4>Ключевая 3</h4>
-                    <span class="tag">Экономичная</span>
+                    <div class="photo-slider">
+                        <img src="./img/acumulador-aerotermico-acs.jpg" alt="Аэротермический аккумулятор ГВС" class="active">
+                    </div>
+                    <h4>Аэротермический аккумулятор ГВС</h4>
+                    <a href="https://mundoclimatico.es/product/acumuladores-aerotermicos-para-acs-serie-manantial/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
                 <div class="model-card">
-                    <h4>Ключевая 4</h4>
-                    <span class="tag">Для офиса</span>
+                    <div class="photo-slider">
+                        <img src="./img/aerotermia-monoblock_1.jpg" alt="Моноблок серии Aurum R32 - Вид 1" class="active">
+                        <img src="./img/aerotermia-monoblock_2.jpg" alt="Моноблок серии Aurum R32 - Вид 2">
+                        <img src="./img/aerotermia-monoblock_3.jpg" alt="Моноблок серии Aurum R32 - Вид 3">
+                        
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 2)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 2)">›</button>
+                        
+                        <div class="slider-nav">
+                            <div class="slider-dot active" onclick="goToSlide(0, 2)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 2)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 2)"></div>
+                        </div>
+                    </div>
+                    <h4>Моноблок серии Aurum R32</h4>
+                    <a href="https://mundoclimatico.es/product/aerotermia-serie-aurum-r32-3/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
                 <div class="model-card">
-                    <h4>Ключевая 5</h4>
-                    <span class="tag">Премиум</span>
+                    <div class="photo-slider">
+                        <img src="./img/frigorifico_1.jpg" alt="Холодильник JRD145EX - Вид 1" class="active">
+                        <img src="./img/frigorifico_2.jpg" alt="Холодильник JRD145EX - Вид 2">
+                        <img src="./img/televisores.png" alt="Холодильник JRD145EX - Вид 3">
+                        
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 3)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 3)">›</button>
+                        
+                        <div class="slider-nav">
+                            <div class="slider-dot active" onclick="goToSlide(0, 3)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 3)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 3)"></div>
+                        </div>
+                    </div>
+                    <h4>Холодильник JRD145EX</h4>
+                    <a href="https://mundoclimatico.es/product/frigorifico-dos-puertas-143x55-cm-e-inox-jrd145ex/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+                
+
+                
+                <div class="model-card">
+                    <div class="photo-slider">
+                        <img src="./img/lavadora-5-kg-d.jpg" alt="Стиральная машина EGA80" class="active">
+                    </div>
+                    <h4>Стиральная машина EGA80</h4>
+                    <a href="https://mundoclimatico.es/product/lavadora-8-kg-e-blanco-ega80/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
                 <div class="model-card">
-                    <h4>Ключевая 6</h4>
-                    <span class="tag">Бюджет</span>
+                    <div class="photo-slider">
+                        <img src="./img/android_1.jpg" alt="Android TV J32SWS - Вид 1" class="active">
+                        <img src="./img/android_2.jpg" alt="Android TV J32SWS - Вид 2">
+                        <img src="./img/android_3.jpg" alt="Android TV J32SWS - Вид 3">
+                        
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 4)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 4)">›</button>
+                        
+                        <div class="slider-nav">
+                            <div class="slider-dot active" onclick="goToSlide(0, 4)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 4)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 4)"></div>
+                        </div>
+                    </div>
+                    <h4>Android TV J32SWS</h4>
+                    <a href="https://mundoclimatico.es/product/android-tv-32-hd-ready-blanca-j32sws/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+                
+                <div class="model-card">
+                    <div class="photo-slider">
+                        <img src="./img/deshumidificador.jpg" alt="Осушитель воздуха JHD30" class="active">
+                    </div>
+                    <h4>Осушитель воздуха JHD30</h4>
+                    <a href="https://mundoclimatico.es/product/deshumidificador-30-litros-jhd30/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                </div>
+                
+                <div class="model-card">
+                    <div class="photo-slider">
+                        <img src="./img/fan-coil-suelo-techo.jpg" alt="Кондиционер серии Mistral" class="active">
+                    </div>
+                    <h4>Кондиционер серии Mistral</h4>
+                    <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-serie-mistral-3/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
             </div>
         </section>
@@ -263,34 +473,63 @@
         <section class="footer-sections">
             <div class="footer-card">
                 <h3>О компании</h3>
-                <p>Узнайте больше о Johnson</p>
-                <a href="about.html" class="category-button" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+                <p>Johnson - испанский производитель климатического оборудования и бытовой техники с более чем 30-летним опытом. Специализируется на кондиционерах, аэротермии, системах вентиляции и полном ассортименте бытовой техники. Обеспечивает качество жизни через инновационные решения для дома и бизнеса.</p>
+                <a href="https://ponjohnsonentuvida.es/" class="category-button" style="margin-top: 15px; display: inline-block;" target="_blank" rel="noopener noreferrer">Подробнее</a>
             </div>
             
             <div class="footer-card">
                 <h3>FAQ</h3>
-                <p>Доставка, монтаж, гарантия</p>
+                <p>Доставка, оплата, гарантия</p>
                 <ul style="color: #666; padding-left: 20px;">
-                    <li>Бесплатная доставка по городу</li>
+                    <li>Доставка по всей Испании</li>
+                    <li>Оплата банковской картой</li>
+                    <li>Оплата банковским переводом</li>
                     <li>Профессиональный монтаж</li>
-                    <li>Гарантия 2 года</li>
-                    <li>Техническая поддержка 24/7</li>
                 </ul>
+                <a href="https://mundoclimatico.es/shipping/" class="category-button" style="margin-top: 15px; display: inline-block;" target="_blank" rel="noopener noreferrer">Подробнее</a>
             </div>
             
             <div class="footer-card">
-                <h3>Контакты + форма</h3>
-                <p>Обратная связь</p>
-                <form class="contact-form">
-                    <input type="text" placeholder="Ваше имя" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="tel" placeholder="Телефон">
-                    <textarea placeholder="Сообщение" rows="4"></textarea>
-                    <button type="submit">Отправить</button>
-                </form>
+                <h3>Контакты Mundo Climatico</h3>
+                <div style="margin-bottom: 20px;">
+                    <p style="color: #666; margin-bottom: 10px;"><strong>Телефон:</strong></p>
+                    <a href="tel:+34663546600" style="color: #47C5AD; font-weight: bold; font-size: 1.1rem; text-decoration: none; cursor: pointer;">+34 663-546-600</a>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <p style="color: #666; margin-bottom: 10px;"><strong>Email:</strong></p>
+                    <span id="email-contact" style="color: #47C5AD; font-weight: bold; cursor: pointer; user-select: none;">info@mundoclimatico.es</span>
+                    <span id="copy-notification" style="display: none; color: #28a745; font-size: 0.9rem; margin-left: 10px;">Скопировано!</span>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <p style="color: #666; margin-bottom: 10px;"><strong>Адрес:</strong></p>
+                    <p style="color: #666; line-height: 1.4; margin-bottom: 15px;">C. Islas Baleares, 12, Puerta 36,<br>03170 Cdad. Quesada, Alicante, Испания</p>
+                    <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #f8f9fa; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="openGoogleMaps()">
+                        <div style="text-align: center; color: #666;">
+                            <div style="font-size: 24px; margin-bottom: 10px;">🗺️</div>
+                            <div style="font-size: 14px; margin-bottom: 5px;">Нажмите для просмотра</div>
+                            <div style="font-size: 12px;">C. Islas Baleares, 12, Puerta 36</div>
+                            <div style="font-size: 12px;">03170 Cdad. Quesada, Alicante, España</div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 10px;">
+                        <a href="https://maps.google.com/?q=Calle+Islas+Baleares+12+Puerta+36+03170+Ciudad+Quesada+Alicante+España" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           style="color: #47C5AD; text-decoration: none; font-size: 0.9rem;">
+                            Открыть в Google Maps →
+                        </a>
+                    </p>
+                </div>
             </div>
         </section>
     </div>
+
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTop" class="scroll-to-top" title="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
 
     <script>
         // Переводы для всех языков
@@ -305,20 +544,25 @@
                 aerotermia_desc: "Тепловые насосы для отопления и горячей воды",
                 appliances: "Бытовая техника",
                 appliances_desc: "Телевизоры и бытовая электроника для дома",
-                water_heaters: "Система охлаждения",
-                water_heaters_desc: "Холодильники и бытовая техника для дома",
+                water_heaters: "Системы охлаждения",
+                water_heaters_desc: "Напольные блоки, фанкойлы и другое оборудование охлаждения",
                 dehumidifiers: "Осушители воздуха",
                 dehumidifiers_desc: "Портативные и стационарные осушители для любых помещений",
+                installation: "Монтаж оборудования",
+                installation_desc: "Профессиональная установка и настройка климатического оборудования",
                 view_models: "Смотреть модели",
+                learn_more: "Узнать больше",
                 object_selection: "Подбор по объекту",
                 key_models: "Популярные модели",
                 key_models_desc: "Быстрые ссылки на карточки товаров",
-                key_1: "Everest 52",
-                key_2: "Ключевая 2",
-                key_3: "Ключевая 3",
-                key_4: "Ключевая 4",
-                key_5: "Ключевая 5",
-                key_6: "Ключевая 6",
+                key_1: "Кондиционер Everest 52",
+                key_2: "Моноблок серии Aurum R32",
+                key_3: "Холодильник JRD145EX",
+                key_4: "Android TV J32SWS",
+                key_5: "Стиральная машина EGA80",
+                key_6: "Стиральная машина EGA80",
+                key_7: "Осушитель воздуха JHD30",
+                key_8: "Кондиционер серии Mistral",
                 hit_sales: "Хит продаж",
                 quiet: "Тихая",
                 economical: "Экономичная",
@@ -327,15 +571,15 @@
                 budget: "Бюджет",
                 more_details: "Подробнее",
                 about_company: "О компании",
-                about_desc: "Узнайте больше о Johnson",
+                about_desc: "Johnson - испанский производитель климатического оборудования и бытовой техники с более чем 30-летним опытом. Специализируется на кондиционерах, аэротермии, системах вентиляции и полном ассортименте бытовой техники. Обеспечивает качество жизни через инновационные решения для дома и бизнеса.",
                 faq: "FAQ",
-                faq_desc: "Доставка, монтаж, гарантия",
-                free_delivery: "Бесплатная доставка по городу",
-                professional_installation: "Профессиональный монтаж",
-                warranty_2years: "Гарантия 2 года",
-                support_24_7: "Техническая поддержка 24/7",
-                contacts_form: "Контакты + форма",
-                feedback: "Обратная связь",
+                faq_desc: "Доставка, оплата, гарантия",
+                free_delivery: "Доставка по всей Испании",
+                professional_installation: "Оплата банковской картой",
+                warranty_2years: "Оплата банковским переводом",
+                support_24_7: "Профессиональный монтаж",
+                contacts_form: "Контакты Mundo Climatico",
+                feedback: "Свяжитесь с нами",
                 your_name: "Ваше имя",
                 email: "Email",
                 phone: "Телефон",
@@ -354,19 +598,24 @@
                 appliances: "Electrodomésticos",
                 appliances_desc: "Televisores y electrónica doméstica",
                 water_heaters: "Sistemas de refrigeración",
-                water_heaters_desc: "Frigoríficos y electrodomésticos para el hogar",
+                water_heaters_desc: "Unidades de suelo-techo, fan coils y otro equipo de refrigeración",
                 dehumidifiers: "Deshumidificadores",
                 dehumidifiers_desc: "Deshumidificadores portátiles y estacionarios para cualquier habitación",
+                installation: "Instalación de Equipos",
+                installation_desc: "Instalación y configuración profesional de equipos climáticos",
                 view_models: "Ver modelos",
+                learn_more: "Saber más",
                 object_selection: "Selección por objeto",
                 key_models: "Modelos Populares",
                 key_models_desc: "Enlaces rápidos a fichas de productos",
-                key_1: "Everest 52",
-                key_2: "Clave 2",
-                key_3: "Clave 3",
-                key_4: "Clave 4",
-                key_5: "Clave 5",
-                key_6: "Clave 6",
+                key_1: "Aire Acondicionado Everest 52",
+                key_2: "Aire Acondicionado JSMV2 140",
+                key_3: "Monobloc Serie Aurum R32",
+                key_4: "Frigorífico JRD145EX",
+                key_5: "Android TV J32SWS",
+                key_6: "Lavadora EGA80",
+                key_7: "Deshumidificador JHD30",
+                key_8: "Aire Acondicionado Serie Mistral",
                 hit_sales: "Éxito de ventas",
                 quiet: "Silencioso",
                 economical: "Económico",
@@ -375,15 +624,15 @@
                 budget: "Presupuesto",
                 more_details: "Más detalles",
                 about_company: "Sobre la empresa",
-                about_desc: "Conozca más sobre Johnson",
+                about_desc: "Johnson - fabricante español de equipos climáticos y electrodomésticos con más de 30 años de experiencia. Especializado en aires acondicionados, aerotermia, sistemas de ventilación y gama completa de electrodomésticos. Garantiza calidad de vida a través de soluciones innovadoras para hogar y negocio.",
                 faq: "FAQ",
-                faq_desc: "Entrega, instalación, garantía",
-                free_delivery: "Entrega gratuita en la ciudad",
-                professional_installation: "Instalación profesional",
-                warranty_2years: "Garantía de 2 años",
-                support_24_7: "Soporte técnico 24/7",
-                contacts_form: "Contactos + formulario",
-                feedback: "Comentarios",
+                faq_desc: "Entrega, pago, garantía",
+                free_delivery: "Entrega en toda España",
+                professional_installation: "Pago con tarjeta bancaria",
+                warranty_2years: "Pago por transferencia bancaria",
+                support_24_7: "Instalación profesional",
+                contacts_form: "Contactos Mundo Climatico",
+                feedback: "Contáctanos",
                 your_name: "Su nombre",
                 email: "Email",
                 phone: "Teléfono",
@@ -402,19 +651,23 @@
                 appliances: "Home Appliances",
                 appliances_desc: "TVs and home electronics",
                 water_heaters: "Cooling Systems",
-                water_heaters_desc: "Refrigerators and home appliances for the house",
+                water_heaters_desc: "Floor-ceiling units, fan coils and other cooling equipment",
                 dehumidifiers: "Air Dehumidifiers",
                 dehumidifiers_desc: "Portable and stationary dehumidifiers for any room",
+                installation: "Equipment Installation",
+                installation_desc: "Professional installation and configuration of climate equipment",
                 view_models: "View models",
+                learn_more: "Learn more",
                 object_selection: "Selection by object",
                 key_models: "Popular Models",
                 key_models_desc: "Quick links to product cards",
-                key_1: "Everest 52",
-                key_2: "Key 2",
-                key_3: "Key 3",
-                key_4: "Key 4",
-                key_5: "Key 5",
-                key_6: "Key 6",
+                key_1: "Air Conditioner Everest 52",
+                key_2: "Air Conditioner JSMV2 140",
+                key_3: "Monoblock Aurum R32 Series",
+                key_4: "Refrigerator JRD145EX",
+                key_5: "Android TV J32SWS",
+                key_6: "Washing Machine EGA80",
+                key_7: "Air Dehumidifier JHD30",
                 hit_sales: "Best seller",
                 quiet: "Quiet",
                 economical: "Economical",
@@ -423,15 +676,15 @@
                 budget: "Budget",
                 more_details: "More details",
                 about_company: "About company",
-                about_desc: "Learn more about Johnson",
+                about_desc: "Johnson - Spanish manufacturer of climate equipment and home appliances with over 30 years of experience. Specializes in air conditioners, aerothermia, ventilation systems and complete range of home appliances. Ensures quality of life through innovative solutions for home and business.",
                 faq: "FAQ",
-                faq_desc: "Delivery, installation, warranty",
-                free_delivery: "Free delivery in the city",
-                professional_installation: "Professional installation",
-                warranty_2years: "2 year warranty",
-                support_24_7: "24/7 technical support",
-                contacts_form: "Contacts + form",
-                feedback: "Feedback",
+                faq_desc: "Delivery, payment, warranty",
+                free_delivery: "Delivery throughout Spain",
+                professional_installation: "Payment by bank card",
+                warranty_2years: "Payment by bank transfer",
+                support_24_7: "Professional installation",
+                contacts_form: "Contacts Mundo Climatico",
+                feedback: "Contact us",
                 your_name: "Your name",
                 email: "Email",
                 phone: "Phone",
@@ -480,6 +733,10 @@
             document.querySelector('.water-heaters p').textContent = t.water_heaters_desc;
             document.querySelector('.water-heaters .category-button').textContent = t.view_models;
             
+            document.querySelector('.installation h3').textContent = t.installation;
+            document.querySelector('.installation p').textContent = t.installation_desc;
+            document.querySelector('.installation .category-button').textContent = t.learn_more;
+            
             // Ключевые модели
             document.querySelector('.section-title h2').textContent = t.key_models;
             document.querySelector('.section-title p').textContent = t.key_models_desc;
@@ -492,6 +749,8 @@
             modelCards[3].textContent = t.key_4;
             modelCards[4].textContent = t.key_5;
             modelCards[5].textContent = t.key_6;
+            modelCards[6].textContent = t.key_7; // Добавляем перевод для Осушителя воздуха JHD30
+            modelCards[7].textContent = t.key_8; // Добавляем перевод для Кондиционера серии Mistral
             
             // Обновляем теги для всех карточек кроме первой и второй (Everest 52 и JFM140Y2K)
             const modelTags = document.querySelectorAll('.model-card .tag');
@@ -560,8 +819,8 @@
         });
         
         // Слайдер фотографий
-        let currentSlide = 0;
-        let slideInterval;
+        let currentSlides = [0, 0, 0, 0, 0, 0, 0]; // Массив для отслеживания текущего слайда каждого слайдера
+        let slideIntervals = []; // Массив для хранения интервалов каждого слайдера
         
         function showSlide(n, sliderIndex = 0) {
             const sliders = document.querySelectorAll('.photo-slider');
@@ -573,40 +832,122 @@
             
             if (slides.length === 0) return;
             
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
+            // Убираем активный класс у текущего слайда
+            slides[currentSlides[sliderIndex]].classList.remove('active');
+            dots[currentSlides[sliderIndex]].classList.remove('active');
             
-            currentSlide = (n + slides.length) % slides.length;
+            // Вычисляем новый индекс слайда
+            currentSlides[sliderIndex] = (n + slides.length) % slides.length;
             
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
+            // Добавляем активный класс новому слайду
+            slides[currentSlides[sliderIndex]].classList.add('active');
+            dots[currentSlides[sliderIndex]].classList.add('active');
         }
         
         function changeSlide(n, sliderIndex = 0) {
-            showSlide(currentSlide + n, sliderIndex);
-            resetAutoSlide();
+            showSlide(currentSlides[sliderIndex] + n, sliderIndex);
+            resetAutoSlide(sliderIndex);
         }
         
         function goToSlide(n, sliderIndex = 0) {
             showSlide(n, sliderIndex);
-            resetAutoSlide();
+            resetAutoSlide(sliderIndex);
         }
         
-        function resetAutoSlide() {
-            clearInterval(slideInterval);
-            startAutoSlide();
+        function resetAutoSlide(sliderIndex) {
+            clearInterval(slideIntervals[sliderIndex]);
+            startAutoSlide(sliderIndex);
         }
         
-        function startAutoSlide() {
-            slideInterval = setInterval(() => {
-                showSlide(currentSlide + 1, 0); // Автосмена только для первого слайдера
+        function startAutoSlide(sliderIndex) {
+            slideIntervals[sliderIndex] = setInterval(() => {
+                const sliders = document.querySelectorAll('.photo-slider');
+                if (sliderIndex < sliders.length) {
+                    const slider = sliders[sliderIndex];
+                    const slides = slider.querySelectorAll('img');
+                    if (slides.length > 0) {
+                        showSlide(currentSlides[sliderIndex] + 1, sliderIndex);
+                    }
+                }
             }, 5000); // Смена каждые 5 секунд
         }
         
-        // Запускаем автосмену при загрузке страницы
+        function startAllAutoSlides() {
+            const sliders = document.querySelectorAll('.photo-slider');
+            sliders.forEach((slider, index) => {
+                // Проверяем, есть ли в слайдере несколько изображений
+                const images = slider.querySelectorAll('img');
+                if (images.length > 1) {
+                    startAutoSlide(index);
+                }
+            });
+        }
+        
+        // Запускаем автосмену для всех слайдеров при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
-            startAutoSlide();
+            startAllAutoSlides();
         });
+        
+        // Функциональность кнопки "наверх"
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        
+        // Показываем кнопку при прокрутке вниз
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // Плавная прокрутка наверх при клике
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Функциональность копирования email
+        const emailContact = document.getElementById('email-contact');
+        const copyNotification = document.getElementById('copy-notification');
+        
+        emailContact.addEventListener('click', function() {
+            // Копируем email в буфер обмена
+            navigator.clipboard.writeText('info@mundoclimatico.es').then(function() {
+                // Показываем уведомление
+                copyNotification.style.display = 'inline';
+                
+                // Скрываем уведомление через 2 секунды
+                setTimeout(function() {
+                    copyNotification.style.display = 'none';
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback для старых браузеров
+                const textArea = document.createElement('textarea');
+                textArea.value = 'info@mundoclimatico.es';
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Показываем уведомление
+                copyNotification.style.display = 'inline';
+                setTimeout(function() {
+                    copyNotification.style.display = 'none';
+                }, 2000);
+            });
+        });
+        
+        // Функция открытия Google Maps
+        function openGoogleMaps() {
+            const address = 'Calle+Islas+Baleares+12+Puerta+36+03170+Ciudad+Quesada+Alicante+España';
+            const url = `https://maps.google.com/?q=${address}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
     </script>
+    
+    <!-- Кнопка "наверх" -->
+    <button class="scroll-to-top" title="Наверх">↑</button>
 </body>
 </html>
