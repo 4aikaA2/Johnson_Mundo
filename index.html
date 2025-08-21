@@ -200,14 +200,14 @@
                         <img src="./img/acabado-negro_3.jpg" alt="Everest 52 - Вид 3">
                         <img src="./img/acabado-negro_4.jpg" alt="Everest 52 - Вид 4">
                         
-                        <button class="slider-arrow prev" onclick="changeSlide(-1)">‹</button>
-                        <button class="slider-arrow next" onclick="changeSlide(1)">›</button>
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 0)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 0)">›</button>
                         
                         <div class="slider-nav">
-                            <div class="slider-dot active" onclick="goToSlide(0)"></div>
-                            <div class="slider-dot" onclick="goToSlide(1)"></div>
-                            <div class="slider-dot" onclick="goToSlide(2)"></div>
-                            <div class="slider-dot" onclick="goToSlide(3)"></div>
+                            <div class="slider-dot active" onclick="goToSlide(0, 0)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 0)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 0)"></div>
+                            <div class="slider-dot" onclick="goToSlide(3, 0)"></div>
                         </div>
                     </div>
                     <h4>Everest 52</h4>
@@ -217,6 +217,25 @@
                 <div class="model-card">
                     <h4>Ключевая 2</h4>
                     <span class="tag">Тихая</span>
+                </div>
+                
+                <div class="model-card">
+                    <div class="photo-slider">
+                        <img src="./img/suelo-techo.jpg" alt="JFM140Y2K - Вид 1" class="active">
+                        <img src="./img/suelo-techo_2.jpg" alt="JFM140Y2K - Вид 2">
+                        <img src="./img/suelo-techo_3.jpg" alt="JFM140Y2K - Вид 3">
+                        
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 1)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 1)">›</button>
+                        
+                        <div class="slider-nav">
+                            <div class="slider-dot active" onclick="goToSlide(0, 1)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 1)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 1)"></div>
+                        </div>
+                    </div>
+                    <h4>JFM140Y2K</h4>
+                    <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-jfmv2-140-trifasica-jfm140y2k/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
                 </div>
                 
                 <div class="model-card">
@@ -474,7 +493,7 @@
             modelCards[4].textContent = t.key_5;
             modelCards[5].textContent = t.key_6;
             
-            // Обновляем теги для всех карточек кроме первой (Everest 52)
+            // Обновляем теги для всех карточек кроме первой и второй (Everest 52 и JFM140Y2K)
             const modelTags = document.querySelectorAll('.model-card .tag');
             if (modelTags.length >= 5) {
                 modelTags[0].textContent = t.quiet;
@@ -484,10 +503,13 @@
                 modelTags[4].textContent = t.budget;
             }
             
-            // Обновляем текст кнопки для Everest 52
+            // Обновляем текст кнопки для Everest 52 (первый слайдер)
             const modelButtons = document.querySelectorAll('.model-card .model-button');
             if (modelButtons[0]) {
                 modelButtons[0].textContent = t.more_details;
+            }
+            if (modelButtons[1]) {
+                modelButtons[1].textContent = t.more_details;
             }
             
             // Футер
@@ -541,9 +563,13 @@
         let currentSlide = 0;
         let slideInterval;
         
-        function showSlide(n) {
-            const slides = document.querySelectorAll('.photo-slider img');
-            const dots = document.querySelectorAll('.slider-dot');
+        function showSlide(n, sliderIndex = 0) {
+            const sliders = document.querySelectorAll('.photo-slider');
+            if (sliderIndex >= sliders.length) return;
+            
+            const slider = sliders[sliderIndex];
+            const slides = slider.querySelectorAll('img');
+            const dots = slider.querySelectorAll('.slider-dot');
             
             if (slides.length === 0) return;
             
@@ -556,13 +582,13 @@
             dots[currentSlide].classList.add('active');
         }
         
-        function changeSlide(n) {
-            showSlide(currentSlide + n);
+        function changeSlide(n, sliderIndex = 0) {
+            showSlide(currentSlide + n, sliderIndex);
             resetAutoSlide();
         }
         
-        function goToSlide(n) {
-            showSlide(n);
+        function goToSlide(n, sliderIndex = 0) {
+            showSlide(n, sliderIndex);
             resetAutoSlide();
         }
         
@@ -573,7 +599,7 @@
         
         function startAutoSlide() {
             slideInterval = setInterval(() => {
-                showSlide(currentSlide + 1);
+                showSlide(currentSlide + 1, 0); // Автосмена только для первого слайдера
             }, 5000); // Смена каждые 5 секунд
         }
         
