@@ -232,7 +232,7 @@
 </head>
 <body>
     <div class="language-switcher">
-        <button onclick="changeLanguage('ru')" class="active" title="Русский">
+        <button onclick="changeLanguage('ru')" title="Русский">
             <svg width="20" height="15" viewBox="0 0 20 15">
                 <rect width="20" height="5" fill="#fff"/>
                 <rect y="5" width="20" height="5" fill="#0052cc"/>
@@ -240,14 +240,14 @@
             </svg>
             RU
         </button>
-        <button onclick="changeLanguage('es')" title="Español">
+        <button onclick="changeLanguage('es')" class="active" title="Español">
             <svg width="20" height="15" viewBox="0 0 20 15">
-                <rect width="20" height="15" fill="#c60b1e"/>
-                <rect y="3" width="20" height="9" fill="#ffc400"/>
-                <rect y="6" width="20" height="3" fill="#c60b1e"/>
-            </svg>
-            ES
-        </button>
+                                <rect width="20" height="15" fill="#c60b1e"/>
+                                <rect y="3" width="20" height="9" fill="#ffc400"/>
+                                <rect y="6" width="20" height="3" fill="#c60b1e"/>
+                            </svg>
+                            ES
+                        </button>
         <button onclick="changeLanguage('en')" title="English">
             <svg width="20" height="15" viewBox="0 0 20 15">
                 <rect width="20" height="15" fill="#012169"/>
@@ -337,10 +337,10 @@
             <div class="models-grid">
                 <div class="model-card">
                     <div class="photo-slider">
-                        <img src="./img/acabado-negro_1.jpg" alt="Everest 52 - Вид 1" class="active">
-                        <img src="./img/acabado-negro_2.jpg" alt="Everest 52 - Вид 2">
-                        <img src="./img/acabado-negro_3.jpg" alt="Everest 52 - Вид 3">
-                        <img src="./img/acabado-negro_4.jpg" alt="Everest 52 - Вид 4">
+                        <img src="./img/acabado-negro_1.jpg" alt="Кондиционер Everest 52 - Вид 1" class="active">
+                        <img src="./img/acabado-negro_2.jpg" alt="Кондиционер Everest 52 - Вид 2">
+                        <img src="./img/acabado-negro_3.jpg" alt="Кондиционер Everest 52 - Вид 3">
+                        <img src="./img/acabado-negro_4.jpg" alt="Кондиционер Everest 52 - Вид 4">
                         
                         <button class="slider-arrow prev" onclick="changeSlide(-1, 0)">‹</button>
                         <button class="slider-arrow next" onclick="changeSlide(1, 0)">›</button>
@@ -360,17 +360,17 @@
                 
                 <div class="model-card">
                     <div class="photo-slider">
-                        <img src="./img/suelo-techo.jpg" alt="JFM140Y2K - Вид 1" class="active">
-                        <img src="./img/suelo-techo_2.jpg" alt="JFM140Y2K - Вид 2">
-                        <img src="./img/suelo-techo_3.jpg" alt="JFM140Y2K - Вид 3">
+                        <img src="./img/suelo-techo.jpg" alt="Кондиционер JFM140Y2K - Вид 1" class="active">
+                        <img src="./img/suelo-techo_2.jpg" alt="Кондиционер JFM140Y2K - Вид 2">
+                        <img src="./img/suelo-techo_3.jpg" alt="Кондиционер JFM140Y2K - Вид 3">
                         
-                        <button class="slider-arrow prev" onclick="changeSlide(-1, 3)">‹</button>
-                        <button class="slider-arrow next" onclick="changeSlide(1, 3)">›</button>
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 1)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 1)">›</button>
                         
                         <div class="slider-nav">
-                            <div class="slider-dot active" onclick="goToSlide(0, 3)"></div>
-                            <div class="slider-dot" onclick="goToSlide(1, 3)"></div>
-                            <div class="slider-dot" onclick="goToSlide(2, 3)"></div>
+                            <div class="slider-dot active" onclick="goToSlide(0, 1)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 1)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 1)"></div>
                         </div>
                     </div>
                     <h4>Кондиционер JFM140Y2K</h4>
@@ -387,17 +387,17 @@
                 
                 <div class="model-card">
                     <div class="photo-slider">
-                        <img src="./img/aerotermia-monoblock_1.jpg" alt="Моноблок серии Aurum R32 - Вид 1" class="active">
-                        <img src="./img/aerotermia-monoblock_2.jpg" alt="Моноблок серии Aurum R32 - Вид 2">
-                        <img src="./img/aerotermia-monoblock_3.jpg" alt="Моноблок серии Aurum R32 - Вид 3">
+                        <img src="./img/aerotermia-monoblock_1.jpg" alt="Аэротермия Aurum R32 - Вид 1" class="active">
+                        <img src="./img/aerotermia-monoblock_2.jpg" alt="Аэротермия Aurum R32 - Вид 2">
+                        <img src="./img/aerotermia-monoblock_3.jpg" alt="Аэротермия Aurum R32 - Вид 3">
                         
-                        <button class="slider-arrow prev" onclick="changeSlide(-1, 2)">‹</button>
-                        <button class="slider-arrow next" onclick="changeSlide(1, 2)">›</button>
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 3)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 3)">›</button>
                         
                         <div class="slider-nav">
-                            <div class="slider-dot active" onclick="goToSlide(0, 2)"></div>
-                            <div class="slider-dot" onclick="goToSlide(1, 2)"></div>
-                            <div class="slider-dot" onclick="goToSlide(2, 2)"></div>
+                            <div class="slider-dot active" onclick="goToSlide(0, 3)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 3)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 3)"></div>
                         </div>
                     </div>
                     <h4>Моноблок серии Aurum R32</h4>
@@ -408,15 +408,13 @@
                     <div class="photo-slider">
                         <img src="./img/frigorifico_1.jpg" alt="Холодильник JRD145EX - Вид 1" class="active">
                         <img src="./img/frigorifico_2.jpg" alt="Холодильник JRD145EX - Вид 2">
-                        <img src="./img/televisores.png" alt="Холодильник JRD145EX - Вид 3">
                         
-                        <button class="slider-arrow prev" onclick="changeSlide(-1, 3)">‹</button>
-                        <button class="slider-arrow next" onclick="changeSlide(1, 3)">›</button>
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 4)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 4)">›</button>
                         
                         <div class="slider-nav">
-                            <div class="slider-dot active" onclick="goToSlide(0, 3)"></div>
-                            <div class="slider-dot" onclick="goToSlide(1, 3)"></div>
-                            <div class="slider-dot" onclick="goToSlide(2, 3)"></div>
+                            <div class="slider-dot active" onclick="goToSlide(0, 4)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 4)"></div>
                         </div>
                     </div>
                     <h4>Холодильник JRD145EX</h4>
@@ -439,13 +437,13 @@
                         <img src="./img/android_2.jpg" alt="Android TV J32SWS - Вид 2">
                         <img src="./img/android_3.jpg" alt="Android TV J32SWS - Вид 3">
                         
-                        <button class="slider-arrow prev" onclick="changeSlide(-1, 4)">‹</button>
-                        <button class="slider-arrow next" onclick="changeSlide(1, 4)">›</button>
+                        <button class="slider-arrow prev" onclick="changeSlide(-1, 6)">‹</button>
+                        <button class="slider-arrow next" onclick="changeSlide(1, 6)">›</button>
                         
                         <div class="slider-nav">
-                            <div class="slider-dot active" onclick="goToSlide(0, 4)"></div>
-                            <div class="slider-dot" onclick="goToSlide(1, 4)"></div>
-                            <div class="slider-dot" onclick="goToSlide(2, 4)"></div>
+                            <div class="slider-dot active" onclick="goToSlide(0, 6)"></div>
+                            <div class="slider-dot" onclick="goToSlide(1, 6)"></div>
+                            <div class="slider-dot" onclick="goToSlide(2, 6)"></div>
                         </div>
                     </div>
                     <h4>Android TV J32SWS</h4>
@@ -462,7 +460,7 @@
                 
                 <div class="model-card">
                     <div class="photo-slider">
-                        <img src="./img/fan-coil-suelo-techo.jpg" alt="Кондиционер серии Mistral" class="active">
+                        <img src="./img/fan-coil-suelo-techo.jpg" alt="Кондиционер Mistral" class="active">
                     </div>
                     <h4>Кондиционер серии Mistral</h4>
                     <a href="https://mundoclimatico.es/product/aire-acondicionado-suelo-techo-serie-mistral-3/" class="model-button" target="_blank" rel="noopener noreferrer">Подробнее</a>
@@ -472,41 +470,41 @@
 
         <section class="footer-sections">
             <div class="footer-card">
-                <h3>О компании</h3>
-                <p>Johnson - испанский производитель климатического оборудования и бытовой техники с более чем 30-летним опытом. Специализируется на кондиционерах, аэротермии, системах вентиляции и полном ассортименте бытовой техники. Обеспечивает качество жизни через инновационные решения для дома и бизнеса.</p>
-                <a href="https://ponjohnsonentuvida.es/" class="category-button" style="margin-top: 15px; display: inline-block;" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                <h3>Sobre la empresa</h3>
+                <p>Johnson - fabricante español de equipos climáticos y electrodomésticos con más de 30 años de experiencia. Especializado en aires acondicionados, aerotermia, sistemas de ventilación y gama completa de electrodomésticos. Garantiza calidad de vida a través de soluciones innovadoras para hogar y negocio.</p>
+                <a href="https://ponjohnsonentuvida.es/" class="category-button" style="margin-top: 15px; display: inline-block;" target="_blank" rel="noopener noreferrer">Más detalles</a>
             </div>
             
             <div class="footer-card">
                 <h3>FAQ</h3>
-                <p>Доставка, оплата, гарантия</p>
+                <p>Entrega, pago, garantía</p>
                 <ul style="color: #666; padding-left: 20px;">
-                    <li>Доставка по всей Испании</li>
-                    <li>Оплата банковской картой</li>
-                    <li>Оплата банковским переводом</li>
-                    <li>Профессиональный монтаж</li>
+                    <li>Entrega en toda España</li>
+                    <li>Pago con tarjeta bancaria</li>
+                    <li>Pago por transferencia bancaria</li>
+                    <li>Instalación profesional</li>
                 </ul>
-                <a href="https://mundoclimatico.es/shipping/" class="category-button" style="margin-top: 15px; display: inline-block;" target="_blank" rel="noopener noreferrer">Подробнее</a>
+                <a href="https://mundoclimatico.es/shipping/" class="category-button" style="margin-top: 15px; display: inline-block; background: #47C5AD; color: #fff;" target="_blank" rel="noopener noreferrer">Más detalles</a>
             </div>
             
             <div class="footer-card">
-                <h3>Контакты Mundo Climatico</h3>
+                <h3>Contactos Mundo Climatico</h3>
                 <div style="margin-bottom: 20px;">
-                    <p style="color: #666; margin-bottom: 10px;"><strong>Телефон:</strong></p>
+                    <p style="color: #666; margin-bottom: 10px;"><strong>Teléfono:</strong></p>
                     <a href="tel:+34663546600" style="color: #47C5AD; font-weight: bold; font-size: 1.1rem; text-decoration: none; cursor: pointer;">+34 663-546-600</a>
                 </div>
                 <div style="margin-bottom: 20px;">
                     <p style="color: #666; margin-bottom: 10px;"><strong>Email:</strong></p>
                     <span id="email-contact" style="color: #47C5AD; font-weight: bold; cursor: pointer; user-select: none;">info@mundoclimatico.es</span>
-                    <span id="copy-notification" style="display: none; color: #28a745; font-size: 0.9rem; margin-left: 10px;">Скопировано!</span>
+                    <span id="copy-notification" style="display: none; color: #28a745; font-size: 0.9rem; margin-left: 10px;">¡Copiado!</span>
                 </div>
                 <div style="margin-bottom: 20px;">
-                    <p style="color: #666; margin-bottom: 10px;"><strong>Адрес:</strong></p>
-                    <p style="color: #666; line-height: 1.4; margin-bottom: 15px;">C. Islas Baleares, 12, Puerta 36,<br>03170 Cdad. Quesada, Alicante, Испания</p>
+                    <p style="color: #666; margin-bottom: 10px;"><strong>Dirección:</strong></p>
+                    <p style="color: #666; line-height: 1.4; margin-bottom: 15px;">C. Islas Baleares, 12, Puerta 36,<br>03170 Cdad. Quesada, Alicante, España</p>
                     <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #f8f9fa; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="openGoogleMaps()">
                         <div style="text-align: center; color: #666;">
                             <div style="font-size: 24px; margin-bottom: 10px;">🗺️</div>
-                            <div style="font-size: 14px; margin-bottom: 5px;">Нажмите для просмотра</div>
+                            <div style="font-size: 14px; margin-bottom: 5px;">Haga clic para ver</div>
                             <div style="font-size: 12px;">C. Islas Baleares, 12, Puerta 36</div>
                             <div style="font-size: 12px;">03170 Cdad. Quesada, Alicante, España</div>
                         </div>
@@ -516,7 +514,7 @@
                            target="_blank" 
                            rel="noopener noreferrer" 
                            style="color: #47C5AD; text-decoration: none; font-size: 0.9rem;">
-                            Открыть в Google Maps →
+                            Abrir en Google Maps →
                         </a>
                     </p>
                 </div>
@@ -532,6 +530,9 @@
     </button>
 
     <script>
+        // Глобальные переменные для слайдеров (должны быть в начале!)
+        let currentSlides = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        
         // Переводы для всех языков
         const translations = {
             ru: {
@@ -556,13 +557,14 @@
                 key_models: "Популярные модели",
                 key_models_desc: "Быстрые ссылки на карточки товаров",
                 key_1: "Кондиционер Everest 52",
-                key_2: "Моноблок серии Aurum R32",
-                key_3: "Холодильник JRD145EX",
-                key_4: "Android TV J32SWS",
-                key_5: "Стиральная машина EGA80",
+                key_2: "Кондиционер JFM140Y2K",
+                key_3: "Аэротермический аккумулятор ГВС",
+                key_4: "Моноблок серии Aurum R32",
+                key_5: "Холодильник JRD145EX",
                 key_6: "Стиральная машина EGA80",
-                key_7: "Осушитель воздуха JHD30",
-                key_8: "Кондиционер серии Mistral",
+                key_7: "Android TV J32SWS",
+                key_8: "Осушитель воздуха JHD30",
+                key_9: "Кондиционер серии Mistral",
                 hit_sales: "Хит продаж",
                 quiet: "Тихая",
                 economical: "Экономичная",
@@ -609,13 +611,14 @@
                 key_models: "Modelos Populares",
                 key_models_desc: "Enlaces rápidos a fichas de productos",
                 key_1: "Aire Acondicionado Everest 52",
-                key_2: "Aire Acondicionado JSMV2 140",
-                key_3: "Monobloc Serie Aurum R32",
-                key_4: "Frigorífico JRD145EX",
-                key_5: "Android TV J32SWS",
+                key_2: "Aire Acondicionado JFM140Y2K",
+                key_3: "Acumulador Aerotérmico ACS",
+                key_4: "Monobloc Serie Aurum R32",
+                key_5: "Frigorífico JRD145EX",
                 key_6: "Lavadora EGA80",
-                key_7: "Deshumidificador JHD30",
-                key_8: "Aire Acondicionado Serie Mistral",
+                key_7: "Android TV J32SWS",
+                key_8: "Deshumidificador JHD30",
+                key_9: "Aire Acondicionado Serie Mistral",
                 hit_sales: "Éxito de ventas",
                 quiet: "Silencioso",
                 economical: "Económico",
@@ -662,12 +665,14 @@
                 key_models: "Popular Models",
                 key_models_desc: "Quick links to product cards",
                 key_1: "Air Conditioner Everest 52",
-                key_2: "Air Conditioner JSMV2 140",
-                key_3: "Monoblock Aurum R32 Series",
-                key_4: "Refrigerator JRD145EX",
-                key_5: "Android TV J32SWS",
+                key_2: "Air Conditioner JFM140Y2K",
+                key_3: "Aerothermal ACS Accumulator",
+                key_4: "Monoblock Aurum R32 Series",
+                key_5: "Refrigerator JRD145EX",
                 key_6: "Washing Machine EGA80",
-                key_7: "Air Dehumidifier JHD30",
+                key_7: "Android TV J32SWS",
+                key_8: "Air Dehumidifier JHD30",
+                key_9: "Air Conditioner Mistral Series",
                 hit_sales: "Best seller",
                 quiet: "Quiet",
                 economical: "Economical",
@@ -771,30 +776,51 @@
                 modelButtons[1].textContent = t.more_details;
             }
             
-            // Футер
-            document.querySelector('.footer-sections .category-card:nth-child(1) h3').textContent = t.about_company;
-            document.querySelector('.footer-sections .category-card:nth-child(1) p').textContent = t.about_desc;
-            document.querySelector('.footer-sections .category-card:nth-child(1) .category-button').textContent = t.more_details;
+            // Футер - используем правильные селекторы для footer-card
+            const footerCards = document.querySelectorAll('.footer-sections .footer-card');
+            if (footerCards.length >= 3) {
+                if (footerCards[0]) {
+                    const h3 = footerCards[0].querySelector('h3');
+                    const p = footerCards[0].querySelector('p');
+                    const button = footerCards[0].querySelector('.category-button');
+                    if (h3) h3.textContent = t.about_company;
+                    if (p) p.textContent = t.about_desc;
+                    if (button) button.textContent = t.more_details;
+                }
+                
+                if (footerCards[1]) {
+                    const h3 = footerCards[1].querySelector('h3');
+                    const p = footerCards[1].querySelector('p');
+                    const li = footerCards[1].querySelectorAll('li');
+                    if (h3) h3.textContent = t.faq;
+                    if (p) p.textContent = t.faq_desc;
+                    if (li.length >= 4) {
+                        li[0].textContent = t.free_delivery;
+                        li[1].textContent = t.professional_installation;
+                        li[2].textContent = t.warranty_2years;
+                        li[3].textContent = t.support_24_7;
+                    }
+                }
+                
+                if (footerCards[2]) {
+                    const h3 = footerCards[2].querySelector('h3');
+                    if (h3) h3.textContent = t.contacts_form;
+                }
+            }
             
-            document.querySelector('.footer-sections .category-card:nth-child(2) h3').textContent = t.faq;
-            document.querySelector('.footer-sections .category-card:nth-child(2) p').textContent = t.faq_desc;
-            
-            const faqItems = document.querySelectorAll('.footer-sections .category-card:nth-child(2) li');
-            faqItems[0].textContent = t.free_delivery;
-            faqItems[1].textContent = t.professional_installation;
-            faqItems[2].textContent = t.warranty_2years;
-            faqItems[3].textContent = t.support_24_7;
-            
-            document.querySelector('.footer-sections .category-card:nth-child(3) h3').textContent = t.contacts_form;
-            document.querySelector('.footer-sections .category-card:nth-child(3) p').textContent = t.feedback;
-            
-            // Форма
-            const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-            formInputs[0].placeholder = t.your_name;
-            formInputs[1].placeholder = t.email;
-            formInputs[2].placeholder = t.phone;
-            formInputs[3].placeholder = t.message;
-            document.querySelector('.contact-form button').textContent = t.send;
+            // Форма - добавляем проверку существования
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                const formInputs = contactForm.querySelectorAll('input, textarea');
+                if (formInputs.length >= 4) {
+                    formInputs[0].placeholder = t.your_name;
+                    formInputs[1].placeholder = t.email;
+                    formInputs[2].placeholder = t.phone;
+                    formInputs[3].placeholder = t.message;
+                }
+                const sendButton = contactForm.querySelector('button');
+                if (sendButton) sendButton.textContent = t.send;
+            }
             
             // Сохраняем выбранный язык
             localStorage.setItem('selectedLanguage', lang);
@@ -804,88 +830,205 @@
         
         // Загружаем сохраненный язык при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
-            if (savedLang !== 'ru') {
-                changeLanguage(savedLang);
+            // Очищаем сохраненный язык
+            localStorage.removeItem('selectedLanguage');
+            
+            // Применяем испанский язык по умолчанию
+            const t = translations.es;
+            
+            // Основные элементы
+            document.querySelector('.hero-subtitle').textContent = t.hero_subtitle;
+            document.querySelector('.hero-brand').textContent = t.hero_brand;
+            document.querySelector('.cta-button').textContent = t.cta_button;
+            
+            // Плашки категорий
+            document.querySelector('.air-conditioners h3').textContent = t.air_conditioners;
+            document.querySelector('.air-conditioners p').textContent = t.air_conditioners_desc;
+            document.querySelector('.air-conditioners .category-button').textContent = t.view_models;
+            
+            document.querySelector('.aerotermia h3').textContent = t.aerotermia;
+            document.querySelector('.aerotermia p').textContent = t.aerotermia_desc;
+            document.querySelector('.aerotermia .category-button').textContent = t.view_models;
+            
+            document.querySelector('.appliances h3').textContent = t.appliances;
+            document.querySelector('.appliances p').textContent = t.appliances_desc;
+            document.querySelector('.appliances .category-button').textContent = t.view_models;
+            
+            document.querySelector('.dehumidifiers h3').textContent = t.dehumidifiers;
+            document.querySelector('.dehumidifiers p').textContent = t.dehumidifiers_desc;
+            document.querySelector('.dehumidifiers .category-button').textContent = t.view_models;
+            
+            document.querySelector('.water-heaters h3').textContent = t.water_heaters;
+            document.querySelector('.water-heaters p').textContent = t.water_heaters_desc;
+            document.querySelector('.water-heaters .category-button').textContent = t.view_models;
+            
+            document.querySelector('.installation h3').textContent = t.installation;
+            document.querySelector('.installation p').textContent = t.installation_desc;
+            document.querySelector('.installation .category-button').textContent = t.learn_more;
+            
+            // Ключевые модели
+            document.querySelector('.section-title h2').textContent = t.key_models;
+            document.querySelector('.section-title p').textContent = t.key_models_desc;
+            
+            // Модели - исправляем порядок согласно HTML структуре
+            const modelCards = document.querySelectorAll('.model-card h4');
+            modelCards[0].textContent = t.key_1; // Everest 52
+            modelCards[1].textContent = t.key_2; // JFM140Y2K
+            modelCards[2].textContent = t.key_3; // Аэротермический аккумулятор ГВС
+            modelCards[3].textContent = t.key_4; // Моноблок серии Aurum R32
+            modelCards[4].textContent = t.key_5; // Холодильник JRD145EX
+            modelCards[5].textContent = t.key_6; // Стиральная машина EGA80
+            modelCards[6].textContent = t.key_7; // Android TV J32SWS
+            modelCards[7].textContent = t.key_8; // Осушитель воздуха JHD30
+            modelCards[8].textContent = t.key_9; // Кондиционер серии Mistral
+            
+            // Футер - используем правильные селекторы для footer-card
+            const footerCards = document.querySelectorAll('.footer-sections .footer-card');
+            if (footerCards.length >= 3) {
+                if (footerCards[0]) {
+                    const h3 = footerCards[0].querySelector('h3');
+                    const p = footerCards[0].querySelector('p');
+                    const button = footerCards[0].querySelector('.category-button');
+                    if (h3) h3.textContent = t.about_company;
+                    if (p) p.textContent = t.about_desc;
+                    if (button) button.textContent = t.more_details;
+                }
+                
+                if (footerCards[1]) {
+                    const h3 = footerCards[1].querySelector('h3');
+                    const p = footerCards[1].querySelector('p');
+                    const li = footerCards[1].querySelectorAll('li');
+                    if (h3) h3.textContent = t.faq;
+                    if (p) p.textContent = t.faq_desc;
+                    if (li.length >= 4) {
+                        li[0].textContent = t.free_delivery;
+                        li[1].textContent = t.professional_installation;
+                        li[2].textContent = t.warranty_2years;
+                        li[3].textContent = t.support_24_7;
+                    }
+                }
+                
+                if (footerCards[2]) {
+                    const h3 = footerCards[2].querySelector('h3');
+                    if (h3) h3.textContent = t.contacts_form;
+                }
             }
+            
+            // Устанавливаем активную кнопку испанского языка
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector('.language-switcher button[onclick="changeLanguage(\'es\')"]').classList.add('active');
+            
+            console.log('Испанский язык применен по умолчанию');
         });
         
         // Обработчик формы
-        document.querySelector(".contact-form").addEventListener("submit", function(e) {
-            e.preventDefault();
-            const currentLang = document.querySelector('.language-switcher button.active').getAttribute('onclick').match(/'([^']+)'/)[1];
-            const t = translations[currentLang];
-            alert(t.message_sent);
-        });
+        const contactForm = document.querySelector(".contact-form");
+        if (contactForm) {
+            contactForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+                const currentLang = document.querySelector('.language-switcher button.active').getAttribute('onclick').match(/'([^']+)'/)[1];
+                const t = translations[currentLang];
+                alert(t.message_sent);
+            });
+        }
         
-        // Слайдер фотографий
-        let currentSlides = [0, 0, 0, 0, 0, 0, 0]; // Массив для отслеживания текущего слайда каждого слайдера
-        let slideIntervals = []; // Массив для хранения интервалов каждого слайдера
+        // Индексы слайдеров с несколькими изображениями
+        const sliderIndices = [0, 1, 3, 4, 6]; // Everest 52, JFM140Y2K, Aurum R32, Холодильник, Android TV
         
-        function showSlide(n, sliderIndex = 0) {
+        function showSlide(n, sliderIndex) {
+            console.log(`showSlide: ${n}, ${sliderIndex}`);
+            
             const sliders = document.querySelectorAll('.photo-slider');
-            if (sliderIndex >= sliders.length) return;
+            if (sliderIndex >= sliders.length) {
+                console.log(`Ошибка: слайдер ${sliderIndex} не существует`);
+                return;
+            }
             
             const slider = sliders[sliderIndex];
             const slides = slider.querySelectorAll('img');
             const dots = slider.querySelectorAll('.slider-dot');
             
-            if (slides.length === 0) return;
+            if (slides.length === 0) {
+                console.log(`Ошибка: в слайдере ${sliderIndex} нет изображений`);
+                return;
+            }
             
-            // Убираем активный класс у текущего слайда
-            slides[currentSlides[sliderIndex]].classList.remove('active');
-            dots[currentSlides[sliderIndex]].classList.remove('active');
+            if (n >= slides.length) {
+                console.log(`Ошибка: слайд ${n} не существует в слайдере ${sliderIndex}`);
+                return;
+            }
             
-            // Вычисляем новый индекс слайда
-            currentSlides[sliderIndex] = (n + slides.length) % slides.length;
+            console.log(`Показываем слайд ${n} в слайдере ${sliderIndex}`);
             
-            // Добавляем активный класс новому слайду
-            slides[currentSlides[sliderIndex]].classList.add('active');
-            dots[currentSlides[sliderIndex]].classList.add('active');
+            // Скрываем все изображения
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Показываем нужное изображение
+            currentSlides[sliderIndex] = n;
+            slides[n].classList.add('active');
+            if (dots[n]) dots[n].classList.add('active');
         }
         
-        function changeSlide(n, sliderIndex = 0) {
-            showSlide(currentSlides[sliderIndex] + n, sliderIndex);
-            resetAutoSlide(sliderIndex);
-        }
-        
-        function goToSlide(n, sliderIndex = 0) {
-            showSlide(n, sliderIndex);
-            resetAutoSlide(sliderIndex);
-        }
-        
-        function resetAutoSlide(sliderIndex) {
-            clearInterval(slideIntervals[sliderIndex]);
-            startAutoSlide(sliderIndex);
-        }
-        
-        function startAutoSlide(sliderIndex) {
-            slideIntervals[sliderIndex] = setInterval(() => {
-                const sliders = document.querySelectorAll('.photo-slider');
-                if (sliderIndex < sliders.length) {
-                    const slider = sliders[sliderIndex];
-                    const slides = slider.querySelectorAll('img');
-                    if (slides.length > 0) {
-                        showSlide(currentSlides[sliderIndex] + 1, sliderIndex);
-                    }
-                }
-            }, 5000); // Смена каждые 5 секунд
-        }
-        
-        function startAllAutoSlides() {
+        function changeSlide(direction, sliderIndex) {
+            console.log(`changeSlide: направление ${direction}, слайдер ${sliderIndex}`);
+            
             const sliders = document.querySelectorAll('.photo-slider');
+            if (sliderIndex >= sliders.length) {
+                console.log(`Ошибка: слайдер ${sliderIndex} не существует`);
+                return;
+            }
+            
+            const slider = sliders[sliderIndex];
+            const slides = slider.querySelectorAll('img');
+            const currentSlide = currentSlides[sliderIndex] || 0;
+            const totalSlides = slides.length;
+            
+            console.log(`Текущий слайд: ${currentSlide}, всего слайдов: ${totalSlides}`);
+            
+            let newSlide = currentSlide + direction;
+            if (newSlide < 0) newSlide = totalSlides - 1;
+            if (newSlide >= totalSlides) newSlide = 0;
+            
+            console.log(`Новый слайд: ${newSlide}`);
+            showSlide(newSlide, sliderIndex);
+        }
+        
+        function goToSlide(n, sliderIndex) {
+            console.log(`goToSlide: слайд ${n}, слайдер ${sliderIndex}`);
+            showSlide(n, sliderIndex);
+        }
+        
+        // Инициализация слайдеров
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliders = document.querySelectorAll('.photo-slider');
+            console.log(`Найдено ${sliders.length} слайдеров`);
+            
             sliders.forEach((slider, index) => {
-                // Проверяем, есть ли в слайдере несколько изображений
                 const images = slider.querySelectorAll('img');
+                const dots = slider.querySelectorAll('.slider-dot');
+                const arrows = slider.querySelectorAll('.slider-arrow');
+                
+                console.log(`Слайдер ${index}: ${images.length} изображений, ${dots.length} точек, ${arrows.length} стрелок`);
+                
                 if (images.length > 1) {
-                    startAutoSlide(index);
+                    // Показываем первое изображение
+                    images[0].classList.add('active');
+                    if (dots[0]) dots[0].classList.add('active');
+                    
+                    // Скрываем остальные
+                    for (let i = 1; i < images.length; i++) {
+                        images[i].classList.remove('active');
+                        if (dots[i]) dots[i].classList.remove('active');
+                    }
+                    
+                    console.log(`Слайдер ${index} инициализирован как многослойный`);
+                } else {
+                    console.log(`Слайдер ${index} имеет только одно изображение`);
                 }
             });
-        }
-        
-        // Запускаем автосмену для всех слайдеров при загрузке страницы
-        document.addEventListener('DOMContentLoaded', function() {
-            startAllAutoSlides();
         });
         
         // Функциональность кнопки "наверх"
