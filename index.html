@@ -25,6 +25,8 @@
             z-index: 1;
             background: rgba(255, 255, 255, 0.3);
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            -webkit-animation: tulleWaveRight 2s ease-in-out infinite;
+            animation: tulleWaveRight 2s ease-in-out infinite;
         }
         
         /* Анимированная легкая тюль слева */
@@ -38,6 +40,8 @@
             z-index: 1;
             background: rgba(255, 255, 255, 0.3);
             box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+            -webkit-animation: tulleWaveLeft 2.5s ease-in-out infinite;
+            animation: tulleWaveLeft 2.5s ease-in-out infinite;
         }
         
 
@@ -50,11 +54,19 @@
         .categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
         .category-card { background: #fff; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; position: relative; overflow: hidden; }
         .category-card.air-conditioners { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/AirJ.png') center center/cover; }
+        .category-card.aerotermia { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/Aerotermia 2.png') center center/cover; }
+        .category-card.appliances { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/televisores.png') center center/cover; }
         .category-card:hover { transform: translateY(-5px); }
         .category-card h3 { font-size: 2.5rem; margin-bottom: 15px; color: #2B2C2C; font-family: 'Lato', 'Source Sans Pro', 'Roboto', 'Segoe UI', sans-serif; font-weight: 300; }
         .category-card p { color: #666; margin-bottom: 20px; }
         .category-button { background: #000; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 15px; font-weight: bold; transition: background 0.3s ease; }
         .category-button:hover { background: #333; }
+        
+        /* Keyframes для анимации тюлей */
+        @-webkit-keyframes tulleWaveRight { 0%,100%{-webkit-transform:translateX(0)} 50%{-webkit-transform:translateX(-20px)} }
+        @keyframes tulleWaveRight { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-20px)} }
+        @-webkit-keyframes tulleWaveLeft { 0%,100%{-webkit-transform:translateX(0)} 50%{-webkit-transform:translateX(20px)} }
+        @keyframes tulleWaveLeft { 0%,100%{transform:translateX(0)} 50%{transform:translateX(20px)} }
         .key-models { margin-bottom: 40px; }
         .section-title { text-align: center; margin-bottom: 30px; }
         .section-title h2 { font-size: 2rem; color: #000; margin-bottom: 10px; }
@@ -124,16 +136,16 @@
                 <a href="catalog.html#split-systems" class="category-button">Смотреть модели</a>
             </div>
             
-            <div class="category-card">
-                <h3>Мультисплит</h3>
-                <p>Многозональные системы для больших помещений</p>
-                <a href="catalog.html#multisplit" class="category-button">Смотреть модели</a>
+            <div class="category-card aerotermia">
+                <h3>Аэротермия</h3>
+                <p style="color: #000;">Тепловые насосы для отопления и горячей воды</p>
+                <a href="catalog.html#aerotermia" class="category-button">Смотреть модели</a>
             </div>
             
-            <div class="category-card">
-                <h3>VRF системы</h3>
-                <p>Промышленные решения для коммерческих объектов</p>
-                <a href="catalog.html#vrf-systems" class="category-button">Линейки и компоненты</a>
+            <div class="category-card appliances">
+                <h3>Бытовая техника</h3>
+                <p>Телевизоры и бытовая электроника для дома</p>
+                <a href="catalog.html#appliances" class="category-button">Смотреть модели</a>
             </div>
             
             <div class="category-card">
