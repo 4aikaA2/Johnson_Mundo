@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог Johnson - Климатическое оборудование</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .language-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .language-switcher button { background: #fff; color: #333; border: 2px solid #e0e0e0; padding: 8px 16px; margin: 0 4px; border-radius: 20px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: bold; }
+        .language-switcher button:hover { border-color: #000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .language-switcher button.active { border-color: #000; background: #f8f8f8; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .back-button { display: inline-block; background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 25px; margin-bottom: 20px; transition: background 0.3s ease; }
+        .back-button:hover { background: #333; }
+        .header { background: #fff; border-radius: 15px; padding: 20px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; }
+        .header h1 { font-size: 2.5rem; color: #000; margin-bottom: 10px; }
+        .header p { color: #666; font-size: 1.1rem; }
+        .category-section { background: #fff; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .category-section h2 { font-size: 2rem; color: #000; margin-bottom: 20px; text-align: center; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .product-card { border: 2px solid #e0e0e0; border-radius: 12px; padding: 20px; text-align: center; transition: all 0.3s ease; }
+        .product-card:hover { border-color: #000; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .product-card h3 { font-size: 1.3rem; color: #000; margin-bottom: 15px; }
+        .product-card .model { background: #f0f0f0; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; display: inline-block; margin-bottom: 15px; }
+        .product-card .description { color: #666; margin-bottom: 20px; line-height: 1.5; }
+        .product-card .features { text-align: left; margin-bottom: 20px; }
+        .product-card .features li { color: #555; margin-bottom: 5px; list-style: none; padding-left: 20px; position: relative; }
+        .product-card .features li:before { content: ""; position: absolute; left: 0; color: #000; font-weight: bold; }
+        .buy-button { background: #000; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-weight: bold; display: inline-block; transition: background 0.3s ease; }
+        .buy-button:hover { background: #333; }
+        @media (max-width: 768px) { .products-grid { grid-template-columns: 1fr; } .header h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <button onclick="changeLanguage('ru')" class="active" title="Русский">
+            <svg width="20" height="15" viewBox="0 0 20 15">
+                <rect width="20" height="5" fill="#fff"/>
+                <rect y="5" width="20" height="5" fill="#0052cc"/>
+                <rect y="10" width="20" height="5" fill="#d80027"/>
+            </svg>
+            RU
+        </button>
+        <button onclick="changeLanguage('es')" title="Español">
+            <svg width="20" height="15" viewBox="0 0 20 15">
+                <rect width="20" height="15" fill="#c60b1e"/>
+                <rect y="3" width="20" height="9" fill="#ffc400"/>
+                <rect y="6" width="20" height="3" fill="#c60b1e"/>
+            </svg>
+            ES
+        </button>
+        <button onclick="changeLanguage('en')" title="English">
+            <svg width="20" height="15" viewBox="0 0 20 15">
+                <rect width="20" height="15" fill="#012169"/>
+                <path d="M0,0 L20,15 M20,0 L0,15" stroke="#fff" stroke-width="2"/>
+                <path d="M10,0 L10,15 M0,7.5 L20,7.5" stroke="#fff" stroke-width="3"/>
+                <path d="M10,0 L10,15 M0,7.5 L20,7.5" stroke="#c8102e" stroke-width="1.5"/>
+                <path d="M0,0 L20,15 M20,0 L0,15" stroke="#c8102e" stroke-width="1"/>
+            </svg>
+            EN
+        </button>
+    </div>
+    
+    <div class="container">
+        <a href="index.html" class="back-button"> Назад на главную</a>
+        
+        <div class="header">
+            <h1>Каталог Johnson</h1>
+            <p>Профессиональное климатическое оборудование для любого объекта</p>
+        </div>
+
+        <section id="split-systems" class="category-section">
+            <h2>Сплит-системы</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Johnson Split Basic</h3>
+                    <span class="model">JSB-09</span>
+                    <p class="description">Базовая сплит-система для небольших помещений</p>
+                    <ul class="features">
+                        <li>Мощность охлаждения: 9000 BTU/h</li>
+                        <li>Площадь помещения: до 25 м</li>
+                        <li>Класс энергопотребления: A+++</li>
+                        <li>Уровень шума: 19 дБ</li>
+                    </ul>
+                    <a href="https://mundoclimatico.es/categoria-producto/climatizacion/" class="buy-button">Купить на MundoClimatico</a>
+                </div>
+
+                <div class="product-card">
+                    <h3>Johnson Split Comfort</h3>
+                    <span class="model">JSC-12</span>
+                    <p class="description">Комфортная сплит-система с расширенным функционалом</p>
+                    <ul class="features">
+                        <li>Мощность охлаждения: 12000 BTU/h</li>
+                        <li>Площадь помещения: до 35 м</li>
+                        <li>Класс энергопотребления: A+++</li>
+                        <li>Wi-Fi управление</li>
+                        <li>Режим сна</li>
+                    </ul>
+                    <a href="https://mundoclimatico.es/categoria-producto/climatizacion/" class="buy-button">Купить на MundoClimatico</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="multisplit" class="category-section">
+            <h2>Мультисплит системы</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Johnson MultiZone 2</h3>
+                    <span class="model">JMZ-2-09</span>
+                    <p class="description">Двухзонная мультисплит система</p>
+                    <ul class="features">
+                        <li>2 внутренних блока</li>
+                        <li>Мощность: 2x9000 BTU/h</li>
+                        <li>Независимое управление</li>
+                        <li>Экономия места</li>
+                    </ul>
+                    <a href="https://mundoclimatico.es/categoria-producto/climatizacion/" class="buy-button">Купить на MundoClimatico</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="vrf-systems" class="category-section">
+            <h2>VRF системы</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Johnson VRF Commercial</h3>
+                    <span class="model">JVRF-C-36</span>
+                    <p class="description">Коммерческая VRF система</p>
+                    <ul class="features">
+                        <li>Мощность: 36 кВт</li>
+                        <li>До 16 внутренних блоков</li>
+                        <li>Высокая энергоэффективность</li>
+                        <li>Профессиональное управление</li>
+                    </ul>
+                    <a href="https://mundoclimatico.es/categoria-producto/climatizacion/" class="buy-button">Купить на MundoClimatico</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="commercial-solutions" class="category-section">
+            <h2>Коммерческие решения</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <h3>Johnson Cassette</h3>
+                    <span class="model">JCS-24</span>
+                    <p class="description">Кассетный внутренний блок</p>
+                    <ul class="features">
+                        <li>Мощность: 24000 BTU/h</li>
+                        <li>4-стороннее распределение воздуха</li>
+                        <li>Встраивается в потолок</li>
+                        <li>Идеально для торговых центров</li>
+                    </ul>
+                    <a href="https://mundoclimatico.es/categoria-producto/climatizacion/" class="buy-button">Купить на MundoClimatico</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

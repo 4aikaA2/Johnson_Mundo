@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johnson - Каталог климатического оборудования</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .language-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .language-switcher button { background: #fff; color: #333; border: 2px solid #e0e0e0; padding: 8px 16px; margin: 0 4px; border-radius: 20px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: bold; }
+        .language-switcher button:hover { border-color: #000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .language-switcher button.active { border-color: #000; background: #f8f8f8; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .hero { position: relative; background: linear-gradient(135deg, rgba(248,249,250,0.8) 0%, rgba(233,236,239,0.8) 100%); padding: 80px 40px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0 0 30px 30px; }
+        
+        /* Анимированная легкая тюль справа */
+        .curtain {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Анимированная легкая тюль слева */
+        .curtain-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+        .hero-logo-large { max-width: 600px; height: auto; margin-bottom: 30px; filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2)); }
+        .hero-subtitle { font-size: 1.4rem; margin-bottom: 20px; color: #666; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 40px; line-height: 1.2; }
+        .cta-button { display: inline-block; background: #fff; color: #47C5AD; padding: 18px 45px; text-decoration: none; border-radius: 15px; font-size: 1.2rem; font-weight: bold; transition: all 0.3s ease; border: 3px solid #47C5AD; box-shadow: 0 4px 15px rgba(71,197,173,0.3); }
+        .cta-button:hover { background: #47C5AD; color: #fff; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(71,197,173,0.4); }
+        .categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-bottom: 40px; }
+        .category-card { background: #fff; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; position: relative; overflow: hidden; }
+        .category-card.air-conditioners { background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url('./img/AirJ.png') center center/cover; }
+        .category-card:hover { transform: translateY(-5px); }
+        .category-card h3 { font-size: 2.5rem; margin-bottom: 15px; color: #2B2C2C; font-family: 'Lato', 'Source Sans Pro', 'Roboto', 'Segoe UI', sans-serif; font-weight: 300; }
+        .category-card p { color: #666; margin-bottom: 20px; }
+        .category-button { background: #000; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 15px; font-weight: bold; transition: background 0.3s ease; }
+        .category-button:hover { background: #333; }
+        .key-models { margin-bottom: 40px; }
+        .section-title { text-align: center; margin-bottom: 30px; }
+        .section-title h2 { font-size: 2rem; color: #000; margin-bottom: 10px; }
+        .section-title p { color: #666; font-size: 1.1rem; }
+        .models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .model-card { background: #fff; border-radius: 12px; padding: 25px; text-align: center; box-shadow: 0 3px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .model-card:hover { transform: translateY(-3px); }
+        .model-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: #000; }
+        .model-card .tag { background: #f0f0f0; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; display: inline-block; }
+        .footer-sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .footer-card { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .footer-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #000; }
+        .footer-card p { color: #666; margin-bottom: 20px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1rem; }
+        .contact-form button { background: #000; color: #fff; padding: 12px 25px; border: none; border-radius: 15px; font-size: 1rem; cursor: pointer; transition: background 0.3s ease; }
+        .contact-form button:hover { background: #333; }
+        @media (max-width: 768px) { .categories { grid-template-columns: 1fr; } .models-grid { grid-template-columns: repeat(2, 1fr); } .footer-sections { grid-template-columns: 1fr; } .hero-logo-large { max-width: 400px; } .hero-brand { font-size: 2.5rem; } .hero { min-height: 400px; padding: 60px 20px; } }
+        @media (max-width: 480px) { .models-grid { grid-template-columns: 1fr; } .container { padding: 15px; } .hero { min-height: 350px; padding: 40px 15px; } .hero-logo-large { max-width: 300px; } .hero-brand { font-size: 2rem; } .hero-subtitle { font-size: 1.1rem; } }
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <button onclick="changeLanguage('ru')" class="active" title="Русский">
+            <svg width="20" height="15" viewBox="0 0 20 15">
+                <rect width="20" height="5" fill="#fff"/>
+                <rect y="5" width="20" height="5" fill="#0052cc"/>
+                <rect y="10" width="20" height="5" fill="#d80027"/>
+            </svg>
+            RU
+        </button>
+        <button onclick="changeLanguage('es')" title="Español">
+            <svg width="20" height="15" viewBox="0 0 20 15">
+                <rect width="20" height="15" fill="#c60b1e"/>
+                <rect y="3" width="20" height="9" fill="#ffc400"/>
+                <rect y="6" width="20" height="3" fill="#c60b1e"/>
+            </svg>
+            ES
+        </button>
+        <button onclick="changeLanguage('en')" title="English">
+            <svg width="20" height="15" viewBox="0 0 20 15">
+                <rect width="20" height="15" fill="#012169"/>
+                <path d="M0,0 L20,15 M20,0 L0,15" stroke="#fff" stroke-width="2"/>
+                <path d="M10,0 L10,15 M0,7.5 L20,7.5" stroke="#fff" stroke-width="3"/>
+                <path d="M10,0 L10,15 M0,7.5 L20,7.5" stroke="#c8102e" stroke-width="2"/>
+                <path d="M0,0 L20,15 M20,0 L0,15" stroke="#c8102e" stroke-width="1"/>
+            </svg>
+            EN
+        </button>
+    </div>
+    
+    <section class="hero">
+        <div class="curtain"></div>
+        <div class="curtain-left"></div>
+        <div class="hero-content">
+            <img src="./img/JohnsonLogo.png" alt="Johnson" class="hero-logo-large">
+            <p class="hero-subtitle">Качественное климатическое оборудование для вашего комфорта в онлайн магазине</p>
+            <p class="hero-brand">Mundo Climatico</p>
+            <a href="https://mundoclimatico.es/brand/johnson/" class="cta-button" target="_blank">Перейти в каталог</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="categories">
+            <div class="category-card air-conditioners">
+                <h3>Кондиционеры</h3>
+                <p>Бытовые и коммерческие решения для кондиционирования</p>
+                <a href="catalog.html#split-systems" class="category-button">Смотреть модели</a>
+            </div>
+            
+            <div class="category-card">
+                <h3>Мультисплит</h3>
+                <p>Многозональные системы для больших помещений</p>
+                <a href="catalog.html#multisplit" class="category-button">Смотреть модели</a>
+            </div>
+            
+            <div class="category-card">
+                <h3>VRF системы</h3>
+                <p>Промышленные решения для коммерческих объектов</p>
+                <a href="catalog.html#vrf-systems" class="category-button">Линейки и компоненты</a>
+            </div>
+            
+            <div class="category-card">
+                <h3>Коммерческие решения</h3>
+                <p>Специализированные системы для бизнеса</p>
+                <a href="catalog.html#commercial-solutions" class="category-button">Подбор по объекту</a>
+            </div>
+        </section>
+
+        <section class="key-models">
+            <div class="section-title">
+                <h2>Ключевые модели</h2>
+                <p>Быстрые ссылки на карточки товаров</p>
+            </div>
+            
+            <div class="models-grid">
+                <div class="model-card">
+                    <h4>Ключевая 1</h4>
+                    <span class="tag">Хит продаж</span>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Ключевая 2</h4>
+                    <span class="tag">Тихая</span>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Ключевая 3</h4>
+                    <span class="tag">Экономичная</span>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Ключевая 4</h4>
+                    <span class="tag">Для офиса</span>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Ключевая 5</h4>
+                    <span class="tag">Премиум</span>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Ключевая 6</h4>
+                    <span class="tag">Бюджет</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-sections">
+            <div class="footer-card">
+                <h3>О компании</h3>
+                <p>Узнайте больше о Johnson</p>
+                <a href="about.html" class="category-button" style="margin-top: 15px; display: inline-block;">Подробнее</a>
+            </div>
+            
+            <div class="footer-card">
+                <h3>FAQ</h3>
+                <p>Доставка, монтаж, гарантия</p>
+                <ul style="color: #666; padding-left: 20px;">
+                    <li>Бесплатная доставка по городу</li>
+                    <li>Профессиональный монтаж</li>
+                    <li>Гарантия 2 года</li>
+                    <li>Техническая поддержка 24/7</li>
+                </ul>
+            </div>
+            
+            <div class="footer-card">
+                <h3>Контакты + форма</h3>
+                <p>Обратная связь</p>
+                <form class="contact-form">
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Телефон">
+                    <textarea placeholder="Сообщение" rows="4"></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Функция переключения языков
+        function changeLanguage(lang) {
+            // Убираем активный класс у всех кнопок
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Добавляем активный класс к выбранной кнопке
+            event.target.classList.add('active');
+            
+            // Здесь можно добавить логику смены языка
+            console.log('Язык изменен на:', lang);
+        }
+        
+        // Обработчик формы
+        document.querySelector(".contact-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            alert("Сообщение отправлено!");
+        });
+    </script>
+</body>
+</html>
