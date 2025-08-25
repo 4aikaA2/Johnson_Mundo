@@ -6,13 +6,13 @@
     <title>Johnson - Каталог климатического оборудования</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f5f5f5; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url('./img/main_banner.png') center center/cover no-repeat fixed; }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .language-switcher { position: fixed; top: 20px; right: 20px; z-index: 1000; background: #fff; border-radius: 25px; padding: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
         .language-switcher button { background: #fff; color: #333; border: 2px solid #e0e0e0; padding: 8px 16px; margin: 0 4px; border-radius: 20px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 8px; font-weight: bold; }
         .language-switcher button:hover { border-color: #000; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .language-switcher button.active { border-color: #000; background: #f8f8f8; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .hero { position: relative; background: linear-gradient(135deg, rgba(248,249,250,0.8) 0%, rgba(233,236,239,0.8) 100%); padding: 80px 40px; text-align: center; margin-bottom: 80px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; min-height: 500px; display: flex; align-items: center; justify-content: center; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0 0 30px 30px; }
+        .hero { position: relative; background: linear-gradient(135deg, rgba(248,249,250,0.8) 0%, rgba(233,236,239,0.8) 100%); padding: 80px 40px; text-align: center; margin-bottom: 80px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden; min-height: 650px; display: flex; align-items: center; justify-content: center; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0 0 30px 30px; }
         
         /* Анимированная легкая тюль справа */
         .curtain {
@@ -49,13 +49,17 @@
 
         
 
-        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; background: rgba(255, 255, 255, 0.4); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); }
+        .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 260px auto 0; background: rgba(255, 255, 255, 0.4); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 25px rgba(198, 11, 30, 0.2); }
+        .hero-logo-wrap { position: relative; display: inline-block; }
         .hero-logo-large { max-width: 600px; height: auto; margin-bottom: 30px; filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.2)); }
+        .logo-badge { position: absolute; top: -5%; left: 92%; transform: rotate(-20deg) translate(-50%, -50%); background: #c60b1e; color: #fff; padding: 12px 18px; font-weight: 800; border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.18); letter-spacing: 1px; font-size: 1.1rem; text-decoration: none; transition: all 0.3s ease; animation: badgePulse 2s ease-in-out infinite; }
+        .logo-badge:hover { transform: rotate(-20deg) translate(-50%, -50%) scale(1.1); box-shadow: 0 8px 25px rgba(198, 11, 30, 0.4); background: #e74c3c; }
+        @keyframes badgePulse { 0%, 100% { transform: rotate(-20deg) translate(-50%, -50%) scale(1); } 50% { transform: rotate(-20deg) translate(-50%, -50%) scale(1.05); } }
         
         /* Бегущие титры с баннером */
-        .running-banner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
-        .running-banner-content { display: flex; animation: runBanner 30s linear infinite; align-items: center; padding: 80px 0; }
-        .running-banner-content img { height: 340px; width: auto; object-fit: contain; }
+        .running-banner { position: absolute; top: 0; left: 0; width: 100%; height: 260px; overflow: hidden; z-index: 3; }
+        .running-banner-content { display: flex; animation: runBanner 30s linear infinite; align-items: center; padding: 20px 0; }
+        .running-banner-content img { height: 240px; width: auto; object-fit: contain; }
         
         @keyframes runBanner {
             0% { transform: translateX(0); }
@@ -63,8 +67,9 @@
         }
         
         .hero-subtitle { font-size: 1.4rem; margin-bottom: 20px; color: #333; text-shadow: none; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(0,0,0,0.2); margin-bottom: 40px; line-height: 1.2; transition: opacity 0.8s ease-in-out; }
-.hero-brand img { height: 42px; width: auto; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2)); }
+        .hero-brand { font-size: 3.5rem; font-weight: bold; color: #47C5AD; margin-bottom: 40px; line-height: 1.2; transition: opacity 0.8s ease-in-out; }
+        .hero-brand img { height: 42px; width: auto; filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2)); }
+        .yellow-o { color: #FEF100 !important; }
         .cta-button { display: inline-block; background: #fff; color: #47C5AD; padding: 18px 45px; text-decoration: none; border-radius: 15px; font-size: 1.2rem; font-weight: bold; transition: all 0.3s ease; border: 3px solid #47C5AD; box-shadow: 0 4px 15px rgba(71,197,173,0.3); }
         .cta-button:hover { background: #47C5AD; color: #fff; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(71,197,173,0.4); }
         .categories { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 80px; }
@@ -81,8 +86,8 @@
         .category-card h3, .category-card p, .category-card .category-button { position: relative; z-index: 1; }
         .category-card h3 { font-size: 2.5rem; margin-bottom: 15px; color: #fff; font-family: 'Lato', 'Source Sans Pro', 'Roboto', 'Segoe UI', sans-serif; font-weight: 400; text-shadow: 0 2px 8px rgba(0,0,0,0.35); }
         .category-card p { color: #f2f2f2; margin-bottom: 20px; text-shadow: 0 1px 6px rgba(0,0,0,0.3); }
-        .category-button { background: #c60b1e; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 15px; font-weight: bold; transition: background 0.3s ease; }
-        .category-button:hover { background: #a00918; }
+        .category-button { background: #47C5AD; color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 15px; font-weight: bold; transition: background 0.3s ease; }
+        .category-button:hover { background: #3a9f8a; }
         
         /* Keyframes для анимации тюлей */
         @-webkit-keyframes tulleWaveRight { 0%,100%{-webkit-transform:translateX(0)} 50%{-webkit-transform:translateX(-20px)} }
@@ -320,9 +325,12 @@
         </div>
         
         <div class="hero-content">
-            <img src="./img/JohnsonLogo.png" alt="Johnson" class="hero-logo-large">
+            <div class="hero-logo-wrap">
+                <img src="./img/JohnsonLogo.png" alt="Johnson" class="hero-logo-large">
+                <a href="https://mundoclimatico.es/brand/johnson/" target="_blank" rel="noopener noreferrer" class="logo-badge">-20%</a>
+            </div>
             <p class="hero-subtitle">Качественное оборудование для вашего комфорта в онлайн магазине</p>
-            <p class="hero-brand">Mundo Climatico</p>
+            <p class="hero-brand">Mundo Climatic<span class="yellow-o">o</span></p>
             <a href="https://mundoclimatico.es/brand/johnson/" class="cta-button" target="_blank">Перейти в каталог</a>
         </div>
     </section>
@@ -510,7 +518,7 @@
             <div class="footer-card">
                 <h3>Sobre la empresa</h3>
                 <p>Johnson - fabricante español de equipos climáticos y electrodomésticos con más de 30 años de experiencia. Especializado en aires acondicionados, aerotermia, sistemas de ventilación y gama completa de electrodomésticos. Garantiza calidad de vida a través de soluciones innovadoras para hogar y negocio.</p>
-                <a href="https://ponjohnsonentuvida.es/" class="category-button" style="margin-top: 15px; display: inline-block;" target="_blank" rel="noopener noreferrer">Más detalles</a>
+                <a href="https://ponjohnsonentuvida.es/" class="category-button" style="margin-top: 15px; display: inline-block; background: #c60b1e;" target="_blank" rel="noopener noreferrer">Johnson</a>
             </div>
             
             <div class="footer-card">
@@ -539,12 +547,20 @@
                 <div style="margin-bottom: 20px;">
                     <p style="color: #666; margin-bottom: 10px;"><strong>Dirección:</strong></p>
                     <p style="color: #666; line-height: 1.4; margin-bottom: 15px;">C. Islas Baleares, 12, Puerta 36,<br>03170 Cdad. Quesada, Alicante, España</p>
-                    <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background: #f8f9fa; display: flex; align-items: center; justify-content: center; cursor: pointer;" onclick="openGoogleMaps()">
-                        <div style="text-align: center; color: #666;">
-                            <div style="font-size: 24px; margin-bottom: 10px;">🗺️</div>
-                            <div style="font-size: 14px; margin-bottom: 5px;">Haga clic para ver</div>
-                            <div style="font-size: 12px;">C. Islas Baleares, 12, Puerta 36</div>
-                            <div style="font-size: 12px;">03170 Cdad. Quesada, Alicante, España</div>
+                    <div style="width: 100%; height: 200px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); cursor: pointer; position: relative;" onclick="openGoogleMaps()">
+                        <iframe 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Calle+Islas+Baleares+12+Puerta+36+03170+Ciudad+Quesada+Alicante+España&zoom=15"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; pointer-events: none;"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'">
+                            <div style="background: rgba(255,255,255,0.9); padding: 10px 15px; border-radius: 20px; color: #333; font-weight: 500; font-size: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                                🗺️ Haga clic para abrir en Google Maps
+                            </div>
                         </div>
                     </div>
                     <p style="text-align: center; margin-top: 10px;">
@@ -609,7 +625,7 @@
                 for_office: "Для офиса",
                 premium: "Премиум",
                 budget: "Бюджет",
-                more_details: "Подробнее",
+                more_details: "Johnson",
                 about_company: "О компании",
                 about_desc: "Johnson - испанский производитель климатического оборудования и бытовой техники с более чем 30-летним опытом. Специализируется на кондиционерах, аэротермии, системах вентиляции и полном ассортименте бытовой техники. Обеспечивает качество жизни через инновационные решения для дома и бизнеса.",
                 faq: "FAQ",
@@ -663,7 +679,7 @@
                 for_office: "Para oficina",
                 premium: "Premium",
                 budget: "Presupuesto",
-                more_details: "Más detalles",
+                more_details: "Johnson",
                 about_company: "Sobre la empresa",
                 about_desc: "Johnson - fabricante español de equipos climáticos y electrodomésticos con más de 30 años de experiencia. Especializado en aires acondicionados, aerotermia, sistemas de ventilación y gama completa de electrodomésticos. Garantiza calidad de vida a través de soluciones innovadoras para hogar y negocio.",
                 faq: "FAQ",
@@ -717,7 +733,7 @@
                 for_office: "For office",
                 premium: "Premium",
                 budget: "Budget",
-                more_details: "More details",
+                more_details: "Johnson",
                 about_company: "About company",
                 about_desc: "Johnson - Spanish manufacturer of climate equipment and home appliances with over 30 years of experience. Specializes in air conditioners, aerothermia, ventilation systems and complete range of home appliances. Ensures quality of life through innovative solutions for home and business.",
                 faq: "FAQ",
